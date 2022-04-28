@@ -1,0 +1,7 @@
+{
+        "links": {
+                "config.fish": "~/.config/fish/config.fish",
+                "fish_variables": "~/.config/fish/fish_variables",
+                "functions": "~/.config/fish/functions"
+        }
+}

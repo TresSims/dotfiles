@@ -1,0 +1,9 @@
+{
+        "links": {
+                "kitty.conf": "~/.config/kitty/kitty.conf",
+                "theme.conf": "~/.config/kitty/theme.conf"
+        },
+        "packages": [
+                "kitty-themes"
+        ]
+}

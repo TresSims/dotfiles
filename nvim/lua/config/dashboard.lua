@@ -1,0 +1,8 @@
+vim.cmd[[ nmap <Leader>ss :<C-u>SessionSave<CR>]]
+vim.cmd[[nmap <Leader>sl :<C-u>SessionLoad<CR>]]
+vim.cmd[[nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>]]
+vim.cmd[[nnoremap <silent> <Leader>ff :DashboardFindFile<CR>]]
+vim.cmd[[nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>]]
+vim.cmd[[nnoremap <silent> <Leader>fa :DashboardFindWord<CR>]]
+vim.cmd[[nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>]]
+vim.cmd[[nnoremap <silent> <Leader>cn :DashboardNewFile<CR>]]
