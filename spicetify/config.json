@@ -1,0 +1,13 @@
+{
+        "links": {
+                "CustomApps": "~/.config/spicetify/CustomApps",
+                "Extensions": "~/.config/spicetify/Extensions",
+                "Themes": "~/.config/spicetify/Themes",
+                "colors.ini": "~/.config/spicetify/Themes/Comfy_Git/Comfy/color.ini",
+                "config-xpui.ini": "~/.config/spicetify/config-xpui.ini/"
+        },
+        "hooks": {
+                "pre_install": "$PUNCTUAL_PACKAGE_DIR/spicetify/pre_install.fish",
+                "post_install": "$PUNCTUAL_PACKAGE_DIR/spicetify/post_install.fish"
+        }
+}

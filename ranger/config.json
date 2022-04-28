@@ -1,0 +1,7 @@
+{
+        "links": {
+                "rc.conf": "~/.config/ranger/rc.conf",
+                "rifle.conf": "~/.config/ranger/rifle.conf",
+                "colorschemes": "~/.config/ranger/colorschemes"
+        }
+}

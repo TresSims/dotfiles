@@ -1,0 +1,8 @@
+{
+        "links": {
+                "systray": "~/.local/bin/systray",
+                "get-sensors": "~/.local/bin/get-sensors",
+                "wtoggle": "~/.local/bin/wtoggle",
+                "ptoggle": "~/.local/bin/ptoggle"
+        }
+}

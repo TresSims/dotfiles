@@ -1,9 +1,8 @@
 require'nvim-tree'.setup {
   disable_netrw        = false,
   hijack_netrw         = true,
-  open_on_setup        = false,
+  open_on_setup        = true,
   ignore_ft_on_setup   = {},
-  auto_close           = false,
   auto_reload_on_write = true,
   open_on_tab          = false,
   hijack_cursor        = false,
@@ -42,10 +41,8 @@ require'nvim-tree'.setup {
   },
   view = {
     width = 30,
-    height = 30,
     hide_root_folder = false,
     side = 'left',
-    auto_resize = false,
     preserve_window_proportions = false,
     mappings = {
       custom_only = false,
@@ -68,7 +65,7 @@ require'nvim-tree'.setup {
       quit_on_open = false,
       window_picker = {
         enable = true,
-        chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+        chars = "asdfjkl",
         exclude = {
           filetype = {
             "notify",
@@ -80,5 +77,3 @@ require'nvim-tree'.setup {
     }
   }
 }
-
-vim.cmd[[nnoremap <leader>tt :NvimTreeToggle<CR>]]

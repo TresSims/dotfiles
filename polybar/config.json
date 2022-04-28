@@ -1,0 +1,12 @@
+{
+        "links":{
+                "colors.ini": "~/.config/polybar/colors.ini",
+                "config.ini": "~/.config/polybar/config.ini",
+                "decor.ini": "~/.config/polybar/decor.ini",
+                "launch.fish": "~/.config/polybar/launch.fish",
+                "modules.ini": "~/.config/polybar/modules.ini",
+                "system.ini": "~/.config/polybar/system.ini"
+        }
+
+
+}

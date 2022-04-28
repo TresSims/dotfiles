@@ -1,0 +1,21 @@
+[submodule "candy-icons"]
+	path = candy-icons
+	url = git@github.com:EliverLara/candy-icons.git
+[submodule "spicetify/Themes/Spicetify"]
+	path = spicetify/Themes/Comfy_Git
+	url = git@github.com:Comfy-Themes/Spicetify
+[submodule "Layan-cursors"]
+	path = Layan-cursors
+	url = https://github.com/vinceliuice/Layan-cursors
+[submodule "fish/FishVariables"]
+	path = fish/FishVariables
+	url = git@github.com:TresSims/FishVariables.git
+[submodule "multicolor-sddm-theme"]
+	path = multicolor-sddm-theme
+	url = https://gitlab.com/dwt1/multicolor-sddm-theme
+[submodule "sddm/multicolor-sddm-theme"]
+	path = sddm/multicolor-sddm-theme
+	url = https://gitlab.com/dwt1/multicolor-sddm-theme
+[submodule "grub/tokyo-night-grub"]
+	path = grub/tokyo-night-grub
+	url = git@github.com:mino29/tokyo-night-grub.git

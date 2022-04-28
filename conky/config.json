@@ -1,0 +1,6 @@
+{
+
+        "links": {
+                "conky.conf": "~/.config/conky/conky.conf"
+        }
+}

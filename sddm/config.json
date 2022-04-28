@@ -1,0 +1,5 @@
+{
+        "hooks": {
+                "pre_install": "$PUNCTUAL_PACKAGE_DIR/sddm/pre_install.fish"
+        }
+}

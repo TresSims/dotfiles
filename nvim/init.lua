@@ -1,8 +1,8 @@
 -- Set up basic vim settings
-require('settings')
+require("settings")
 
 -- Install all Plugins
-require('plugins')
+require("plugins")
 
 -- Add my keybind settings
-require('keybinds')
+require("keybinds")

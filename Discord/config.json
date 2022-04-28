@@ -1,0 +1,6 @@
+{
+        "links":{
+                "plugins": "~/.config/BetterDiscord/plugins",
+                "themes": "~/.config/BetterDiscord/themes"
+        }
+}

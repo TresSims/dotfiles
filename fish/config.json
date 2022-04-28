@@ -1,7 +1,8 @@
 {
         "links": {
                 "config.fish": "~/.config/fish/config.fish",
-                "fish_variables": "~/.config/fish/fish_variables",
-                "functions": "~/.config/fish/functions"
+                "functions": "~/.config/fish/functions",
+                "FishVariables/fish_variables": "~/.config/fish/fish_variables",
+                "starship.toml": "~/.config/starship.toml"
         }
 }

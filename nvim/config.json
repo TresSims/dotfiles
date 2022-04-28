@@ -1,6 +1,10 @@
 {
         "links": {
                 "init.lua": "~/.config/nvim/init.lua",
-                "lua": "~/.config/nvim/lua"
+                "lua": "~/.config/nvim/lua",
+                "ginit.vim": "~/.config/nvim/ginit.vim"
+        },
+        "hooks": {
+                "pre_install": "$PUNCTUAL_PACKAGE_DIR/nvim/pre_install.fish"
         }
 }
