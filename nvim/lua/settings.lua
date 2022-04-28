@@ -31,7 +31,7 @@ vim.api.nvim_exec(
 )
 
 vim.cmd[[set expandtab]] -- Use whitespace instead of tabs
-vim.cmd[[set cc=80]] -- Let me know how long my lines should be
+vim.cmd[[set cc=88]] -- Let me know how long my lines should be
 vim.cmd[[set cursorline]] -- Highlight my current line
 vim.cmd[[set clipboard=unnamedplus]] -- Use system clipbord
 vim.cmd[[set backupdir=~/.config/nvim/backups]] -- Keep backups

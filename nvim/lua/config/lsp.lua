@@ -9,3 +9,10 @@ require'lspconfig'.lemminx.setup{
                 }
         }
 }
+
+vim.cmd([[ 
+        augroup coq-start
+                autocmd!
+                au bufEnter * :COQnow --shut-up
+        augroup END
+]])

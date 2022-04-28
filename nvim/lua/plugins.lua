@@ -36,11 +36,24 @@ return require('packer').startup(function()
 	    config = "require('config.tree')"
 	}
 
-	-- A fuzzyfinder
-	use 'liuchengxu/vim-clap'
+	-- A search engine
+        use {
+          'nvim-telescope/telescope.nvim',
+          requires =  'nvim-lua/plenary.nvim', 
+          config="require('config.telescope')"
+        }
 
-	-- Dashboard Plugin
-	use {'glepnir/dashboard-nvim', config="require('config.dashboard')"}
+        -- Treesitter
+	use {'nvim-treesitter/nvim-treesitter', config="require('config.treesitter')"}
+        
+        -- lsp
+	use {'neovim/nvim-lspconfig', config="require('config.lsp')"}
+
+        -- autocompletion
+        use { 'ms-jpq/coq_nvim', requires='ms-jpq/coq.artifacts' }
+
+        -- Hilight the stuff under my cursor
+	use {'yamatsum/nvim-cursorline', config="require('config.cursorline')"}
 
 	-- Sneak
 	use 'justinmk/vim-sneak'
@@ -56,6 +69,4 @@ return require('packer').startup(function()
 
 	-- I want to see my hotkey trees
 	use {'folke/which-key.nvim', config="require('config.which-key')"}
-
-        use { 'neovim/nvim-lspconfig', config="require('config.lsp')" }
 end)

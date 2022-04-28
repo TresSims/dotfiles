@@ -67,21 +67,13 @@ plugins = {
 local wk = require("which-key")
 wk.register({
         ['<CR>'] = {'@q', 'macro q'}, -- setting a special key
+        [':'] = {'<Cmd>Telescope commands<CR>', 'Search Commands' },
         b = {
                 name = "Buffer",
-                -- 1 = 'Buffer 1',
-                -- 2 = 'Buffer 2',
-                -- 3 = 'Buffer 3',
-                -- 4 = 'Buffer 4',
-                -- 5 = 'Buffer 5',
-                -- 6 = 'Buffer 6',
-                -- 7 = 'Buffer 7',
-                -- 8 = 'Buffer 8',
-                -- 9 = 'Buffer 9',
                 n = {':bn<CR>', 'Next Buffer'},
                 p = {':bp<CR>', 'Previous Buffer'},
                 d = {':bd<CR>', 'Delete Buffer'},
-                b = {'<Cmd>Clap buffers<CR>', 'Search Buffers'},
+                b = {'<Cmd>Telescope buffers<CR>', 'Search Buffers'},
                 f = {':lua vim.lsp.buf.formatting()<CR>', 'Format'}
 
         },
@@ -93,16 +85,17 @@ wk.register({
                 name = "Diagnostics",
                 N = {"<Cmd>lua vim.diagnostic.goto_prev()<CR>", "Goto Previous" },
                 n = {"<Cmd>lua vim.diagnostic.goto_next()<CR>", "Goto Next" },
+                s = {'<Cmd>Telescope diagnostics<CR>', 'Search'},
         },
         f = {
                 name = "Find",
-                f =  "File",
-                a =  "Word",
-                b = "Mark",
-                h = "File from History",
-                b = {'<Cmd>Clap buffers<CR>', 'Buffers'},
-                s = {'<Cmd>Clap lines<CR>', 'Search Buffer'},
-                y = {'<Cmd>Clap yanks<CR>', 'yanks'},
+                f = { "<Cmd>Telescope find_files<CR>", "Files"},
+                b = { "<Cmd>Telescope marks<CR>", "Mark" },
+                h = {"<Cmd>Telescope oldfiles<CR>",  "File from History" },
+                b = {'<Cmd>Telescope buffers<CR>', 'Buffers'},
+                s = {'<Cmd>Telescope current_buffer_fuzzy_find<CR>', 'Search Buffer'},
+                y = {'<Cmd>Telescope registers<CR>', 'Yanks'},
+                d = {'<Cmd>Telescope diagnostics<CR>', 'Diagnostics'},
         },
         h = {
                 name = "help",
@@ -121,17 +114,10 @@ wk.register({
                 h = {"<C-W>h", "Left"},
                 k = {"<C-W>k", "Up"},
                 l = {"<C-W>l", "Down"},
-                w = {"<C-W>w", "Other Window"}
+                w = {"<C-W>w", "Other Window"},
+                ['|'] = {':vsp<Cr>', 'Split' },
+                ['-'] = {':sp<Cr>', 'Split' },
 
         }
 }, { prefix = "<leader>" })
-wk.register({
-        '<Cmd>Clap command<CR>', 'Search Commands'
-}, {prefix = "<leader>:"})
-wk.register({
-        ':vsp<Cr>', 'Split'
-}, {prefix = "<leader>w|"})
-wk.register({
-        ':sp<Cr>', 'Split'
-}, {prefix = "<leader>w-"})
 vim.cmd[[set timeoutlen=250]]
