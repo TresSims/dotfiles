@@ -12,9 +12,9 @@
 set $mod Mod4
 
 # Monitors
-set $left_monitor DP-4
-set $center_monitor DP-0
-set $right_monitor HDMI-0
+set $left_monitor HDMI-0
+set $center_monitor DP-2
+set $right_monitor DP-0
 
 
 # Font for window titles. Will also be used by the bar unless a different font
