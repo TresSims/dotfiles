@@ -250,3 +250,6 @@ exec_always --no-startup-id dropbox
 exec_always --no-startup-id discord
 exec_always --no-startup-id steam
 exec_always --no-startup-id sesinetd
+
+# Mount Google Drives
+exec_always --no-startup-id /home/tsims/.config/scripts/gdrive_setup
