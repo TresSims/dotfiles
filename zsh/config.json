@@ -1,7 +1,0 @@
-{
-        "links": {
-                "zshrc": "~/.zshrc",
-                "p10k.zsh": "~/.p10k.zsh",
-                "zsh": "~/.config/zsh"
-        }
-}
