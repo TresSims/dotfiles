@@ -1,5 +1,6 @@
 format = """
-[ ](bg:#16161E fg:#7AA2F7)\
+[╭─](comment)\
+[](bg:#16161E fg:#7AA2F7)\
 $username\
 [](bg:#9ECE6A fg:#7AA2F7)\
 $directory\
@@ -19,12 +20,13 @@ $character
 # add_newline = false
 [status]
 symbol="[](red)"
-success_symbol=''
+success_symbol=''
 disabled=false
 format = '[ $symbol | $status ](purple)'
 
 [fill]
 symbol="―"
+style="bold foreground"
 
 # You can also replace your username with a neat symbol like  to save some space
 [username]
@@ -34,15 +36,17 @@ style_root = "fg:#13131E bg:#16161E"
 format = '[ $user ]($style)'
 
 [character]
-success_symbol = "[\n  ❯](purple)"
-error_symbol = "[\n  ❯](red)"
-vicmd_symbol = "[\n  ❮](green)"
+success_symbol = "[  ❯](purple)"
+error_symbol = "[  ❯](red)"
+vicmd_symbol = "[  ❮](green)"
+format = "[╰─](comment)$symbol "
 
 [directory]
 style = "fg:#13131E bg:#9ECE6A "
 format = "[ $path ]($style)"
-truncation_length = 3
+truncation_length = 9
 truncation_symbol = "…/"
+truncate_to_repo=false
 
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
@@ -54,7 +58,7 @@ truncation_symbol = "…/"
 # "Important  " = "  "
 
 [git_branch]
-symbol = ""
+symbol = ""
 style = "fg:#13131E bg:#7DCFFF"
 format = '[[ $symbol $branch ](fg:#13131E bg:#7DCFFF)]($style)'
 
