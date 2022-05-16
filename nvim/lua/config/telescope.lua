@@ -1,3 +1,5 @@
+require('telescope').load_extension('project')
+
 require('telescope').setup{
   defaults = {
     -- ...
@@ -25,7 +27,10 @@ require('telescope').setup{
       theme = "ivy",
     },
   },
-  extensions = {
-    -- ...
+ extensions = {
+    project = {
+      hidden_files = true, -- default: false
+      theme = "dropdown"
+    } 
   }
 }

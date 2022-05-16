@@ -36,12 +36,18 @@ return require('packer').startup(function()
 	    config = "require('config.tree')"
 	}
 
+        -- a startscreen
+        use 'mhinz/vim-startify'
+
 	-- A search engine
         use {
           'nvim-telescope/telescope.nvim',
           requires =  'nvim-lua/plenary.nvim', 
           config="require('config.telescope')"
         }
+        use 'nvim-telescope/telescope-project.nvim'
+
+
 
         -- Treesitter
 	use {'nvim-treesitter/nvim-treesitter', config="require('config.treesitter')"}
