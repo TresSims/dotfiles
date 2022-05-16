@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "c", "lua", "python" },
+  ensure_installed = "all",
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -25,3 +25,5 @@ require'nvim-treesitter.configs'.setup {
 
 vim.cmd[[set foldmethod=expr]]
 vim.cmd[[set foldexpr=nvim_treesitter#foldexpr()]]
+vim.cmd[[set foldminlines=10]]
+vim.cmd[[set foldnestmax=4]]

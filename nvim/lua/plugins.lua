@@ -7,6 +7,9 @@ return require('packer').startup(function()
 	  augroup end
 	]])
 
+        -- Confirm on exit
+        use 'vim-scripts/confirm-quit'
+
 	-- Manage the package magager
 	use 'wbthomason/packer.nvim'
 	
