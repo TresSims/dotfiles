@@ -103,7 +103,11 @@ wk.register({
                 l = { ":LspInfo<CR>", "lsp" }
         },
         s = {
-                name = "Session"
+                name = "Session",
+                s = {"<Cmd>:SSave<Cr>", "Save"},
+                l = {"<Cmd>:SLoad<Cr>", "Load"},
+                d = {"<Cmd>:SDelete<Cr>", "Delete"},
+                c = {"<Cmd>:SClose<Cr>", "Close"},
         },
         t = {
                 name = "Tree"

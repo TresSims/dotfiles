@@ -37,7 +37,10 @@ return require('packer').startup(function()
 	}
 
         -- a startscreen
-        use 'mhinz/vim-startify'
+        use {
+                'mhinz/vim-startify',
+                config = "require('config.dashboard')"
+        }
 
 	-- Telescope ecosystem
         use {
