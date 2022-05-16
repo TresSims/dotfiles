@@ -13,7 +13,8 @@ $time\
 [ ](fg:#3B4261)\
 $fill\
 [ﲕ ](purple)\
-$status
+$status\
+$cmd_duration
 $character
 """
 
@@ -35,6 +36,9 @@ show_always = true
 style_user = "fg:#13131E bg:#7AA2F7"
 style_root = "fg:orange bg:#7AA2F7"
 format = '[ $user ]($style)'
+
+[cmd_duration]
+format = "[| ](purple)[$duration]($style)"
 
 [hostname]
 ssh_only = false
