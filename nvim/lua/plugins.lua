@@ -29,9 +29,8 @@ return require('packer').startup(function()
 
 	-- A nice filebrowser
 	use {
-	    'kyazdani42/nvim-tree.lua',
+	    'preservim/nerdtree',
 	    requires = {
-	      'kyazdani42/nvim-web-devicons', -- optional, for file icon
 	    },
 	    config = "require('config.tree')"
 	}

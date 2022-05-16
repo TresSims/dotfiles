@@ -110,7 +110,8 @@ wk.register({
                 c = {"<Cmd>:SClose<Cr>", "Close"},
         },
         t = {
-                name = "Tree"
+                name = "Tree",
+                t = {"<Cmd>:NERDTreeToggle<Cr>", "Toggle"},
         },
         w = {
                 name = "Window",
