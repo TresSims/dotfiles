@@ -1,8 +1,6 @@
-require('telescope').load_extension('project')
-
 require('telescope').setup{
   defaults = {
-    -- ...
+          theme = "ivy",
   },
   pickers = {
     find_files = {
@@ -30,7 +28,16 @@ require('telescope').setup{
  extensions = {
     project = {
       hidden_files = true, -- default: false
-      theme = "dropdown"
-    } 
+      theme = "ivy",
+    },
+    file_browser = {
+            theme = "ivy",
+    },
   }
 }
+
+require('telescope').load_extension('project')
+
+require('telescope').load_extension('file_browser')
+
+require('telescope').load_extension('ui-select')

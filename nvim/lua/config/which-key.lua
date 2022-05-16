@@ -91,7 +91,7 @@ wk.register({
                 name = "Find",
                 b = {'<Cmd>Telescope buffers<CR>', 'Buffers'},
                 m = { "<Cmd>Telescope marks<CR>", "Mark" },
-                f = { "<Cmd>Telescope find_files<CR>", "Files"},
+                f = { "<Cmd>Telescope file_browser<CR>", "Files"},
                 h = {"<Cmd>Telescope oldfiles<CR>",  "File from History" },
                 s = {'<Cmd>Telescope current_buffer_fuzzy_find<CR>', 'Search Buffer'},
                 y = {'<Cmd>Telescope registers<CR>', 'Yanks'},

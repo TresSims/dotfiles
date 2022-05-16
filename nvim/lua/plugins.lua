@@ -39,15 +39,15 @@ return require('packer').startup(function()
         -- a startscreen
         use 'mhinz/vim-startify'
 
-	-- A search engine
+	-- Telescope ecosystem
         use {
           'nvim-telescope/telescope.nvim',
           requires =  'nvim-lua/plenary.nvim', 
           config="require('config.telescope')"
         }
+        use 'nvim-telescope/telescope-ui-select.nvim'
+        use 'nvim-telescope/telescope-file-browser.nvim'
         use 'nvim-telescope/telescope-project.nvim'
-
-
 
         -- Treesitter
 	use {'nvim-treesitter/nvim-treesitter', config="require('config.treesitter')"}
