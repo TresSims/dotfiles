@@ -2,6 +2,7 @@ format = """
 [╭─](comment)\
 [](bg:#16161E fg:#7AA2F7)\
 $username\
+$hostname\
 [](bg:#9ECE6A fg:#7AA2F7)\
 $directory\
 [](fg:#9ECE6A bg:#7DCFFF)\
@@ -32,8 +33,13 @@ style="bold foreground"
 [username]
 show_always = true
 style_user = "fg:#13131E bg:#7AA2F7"
-style_root = "fg:#13131E bg:#16161E"
+style_root = "fg:orange bg:#7AA2F7"
 format = '[ $user ]($style)'
+
+[hostname]
+ssh_only = false
+style = "fg:#13131E bg:#7AA2F7"
+format = '[@](fg:#13131E bg:#7AA2F7)[ $hostname ]($style)'
 
 [character]
 success_symbol = "[  ❯](purple)"
