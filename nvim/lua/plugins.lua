@@ -6,15 +6,11 @@ return require('packer').startup(function()
 	    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
 	  augroup end
 	]])
+        -- Manage the package magager
+        use 'wbthomason/packer.nvim'
 
         -- start up faster
         use 'lewis6991/impatient.nvim'
-
-        -- Confirm on exit
-        use 'vim-scripts/confirm-quit'
-
-	-- Manage the package magager
-	use 'wbthomason/packer.nvim'
 	
 	-- Theme Plugin
 	use {'folke/tokyonight.nvim', config="require('config.theme')"}
@@ -33,10 +29,11 @@ return require('packer').startup(function()
 		config="require('config.topline')"
 	}
 
-	-- A nice filebrowser
+	-- A nice tree
 	use {
-	    'preservim/nerdtree',
+	    'kyazdani42/nvim-tree.lua',
 	    requires = {
+                    'kyazdani42/nvim-web-devicons'
 	    },
 	    config = "require('config.tree')"
 	}
@@ -50,13 +47,12 @@ return require('packer').startup(function()
 	-- Telescope ecosystem
         use {
           'nvim-telescope/telescope.nvim',
+          'nvim-telescope/telescope-ui-select.nvim',
+          'nvim-telescope/telescope-file-browser.nvim',
+          'nvim-telescope/telescope-project.nvim',
           requires =  'nvim-lua/plenary.nvim', 
           config="require('config.telescope')"
         }
-        use 'nvim-telescope/telescope-ui-select.nvim'
-        use 'nvim-telescope/telescope-file-browser.nvim'
-        use 'nvim-telescope/telescope-project.nvim'
-
         -- Treesitter
 	use {'nvim-treesitter/nvim-treesitter', config="require('config.treesitter')"}
         
@@ -69,6 +65,9 @@ return require('packer').startup(function()
 
         -- autocompletion
         use { 'ms-jpq/coq_nvim', requires='ms-jpq/coq.artifacts' }
+
+        -- Map my indent levels
+        use { 'lukas-reineke/indent-blankline.nvim' }
 
         -- Hilight the stuff under my cursor
 	use {'yamatsum/nvim-cursorline', config="require('config.cursorline')"}

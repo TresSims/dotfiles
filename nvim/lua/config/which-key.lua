@@ -117,7 +117,7 @@ wk.register({
         },
         t = {
                 name = "Tree",
-                t = {"<Cmd>:NERDTreeToggle<Cr>", "Toggle"},
+                t = {"<Cmd>:NvimTreeToggle<Cr>", "Toggle"},
         },
         w = {
                 name = "Window",
