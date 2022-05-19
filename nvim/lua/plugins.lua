@@ -7,6 +7,9 @@ return require('packer').startup(function()
 	  augroup end
 	]])
 
+        -- start up faster
+        use 'lewis6991/impatient.nvim'
+
         -- Confirm on exit
         use 'vim-scripts/confirm-quit'
 
