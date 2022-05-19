@@ -11,9 +11,32 @@ return require('packer').startup(function()
 
         -- start up faster
         use 'lewis6991/impatient.nvim'
+        use 'nathom/filetype.nvim'
+
+        -- a startscreen
+        use {
+                'mhinz/vim-startify',
+                config = "require('config.dashboard')"
+        }
 	
 	-- Theme Plugin
 	use {'folke/tokyonight.nvim', config="require('config.theme')"}
+
+        -- Treesitter
+	use {'nvim-treesitter/nvim-treesitter', config="require('config.treesitter')"}
+        use { 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } } 
+        
+	-- Telescope ecosystem
+        use {
+          'nvim-telescope/telescope.nvim',
+          'nvim-telescope/telescope-ui-select.nvim',
+          'nvim-telescope/telescope-file-browser.nvim',
+          'nvim-telescope/telescope-project.nvim',
+          requires =  {
+                { 'nvim-lua/plenary.nvim' }
+          },
+          config="require('config.telescope')"
+        }
 
 	--That nice modeline at the bottom
 	use {
@@ -38,24 +61,6 @@ return require('packer').startup(function()
 	    config = "require('config.tree')"
 	}
 
-        -- a startscreen
-        use {
-                'mhinz/vim-startify',
-                config = "require('config.dashboard')"
-        }
-
-	-- Telescope ecosystem
-        use {
-          'nvim-telescope/telescope.nvim',
-          'nvim-telescope/telescope-ui-select.nvim',
-          'nvim-telescope/telescope-file-browser.nvim',
-          'nvim-telescope/telescope-project.nvim',
-          requires =  'nvim-lua/plenary.nvim', 
-          config="require('config.telescope')"
-        }
-        -- Treesitter
-	use {'nvim-treesitter/nvim-treesitter', config="require('config.treesitter')"}
-        
         -- lsp
 	use {
                 'williamboman/nvim-lsp-installer',
@@ -69,7 +74,7 @@ return require('packer').startup(function()
         -- Map my indent levels
         use { 'lukas-reineke/indent-blankline.nvim' }
 
-        -- Hilight the stuff under my cursor
+        -- Underline the stuff under my cursor
 	use {'yamatsum/nvim-cursorline', config="require('config.cursorline')"}
 
 	-- Sneak
@@ -78,7 +83,7 @@ return require('packer').startup(function()
 	-- Git commands for nvim.
 	use 'tpope/vim-fugitive' 
 	
-	-- Use "gc" to comment lines in visual mode. Similarly to cmd+/ in other editors.
+	-- Comment plugins
         use 'tpope/vim-commentary' 
 
 	-- A great tool for adding, removing and changing braces, brackets, quotes and various tags around your text.

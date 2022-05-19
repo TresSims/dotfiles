@@ -1,19 +1,30 @@
 -- LSP installer setup
-require("nvim-lsp-installer").setup {}
+require("nvim-lsp-installer").setup {
+        automatic_installation = true
+}
 
 -- Enable LSP
-require'lspconfig'.pyright.setup{} -- python
-require'lspconfig'.gopls.setup{} -- go
-require'lspconfig'.sumneko_lua.setup{} -- lua
-require'lspconfig'.clangd.setup{} -- C
+local lspconfig = require('lspconfig')
 
-require'lspconfig'.lemminx.setup{ --xml
+-- lspconfig.tailwindcss.setup { }
+-- lspconfig.eslint.setup { }
+-- lspconfig.jsonls.setup { }
+-- lspconfig.vuels.setup { }
+
+lspconfig.sourcery.setup{}
+lspconfig.gopls.setup{}
+lspconfig.clangd.setup{}
+lspconfig.sumneko_lua.setup {}
+
+lspconfig.lemminx.setup{
         settings = {
                 filetypes = {
                         "model"
                 }
         }
 }
+
+
 
 -- Set up CoQ
 vim.cmd([[ 
