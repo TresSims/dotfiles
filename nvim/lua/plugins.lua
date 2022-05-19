@@ -58,7 +58,11 @@ return require('packer').startup(function()
 	use {'nvim-treesitter/nvim-treesitter', config="require('config.treesitter')"}
         
         -- lsp
-	use {'neovim/nvim-lspconfig', config="require('config.lsp')"}
+	use {
+                'williamboman/nvim-lsp-installer',
+                'neovim/nvim-lspconfig', 
+                config="require('config.lsp')"
+        }
 
         -- autocompletion
         use { 'ms-jpq/coq_nvim', requires='ms-jpq/coq.artifacts' }

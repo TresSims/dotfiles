@@ -1,9 +1,13 @@
--- Python LSP
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.gopls.setup{}
+-- LSP installer setup
+require("nvim-lsp-installer").setup {}
 
--- XML Lsp
-require'lspconfig'.lemminx.setup{
+-- Enable LSP
+require'lspconfig'.pyright.setup{} -- python
+require'lspconfig'.gopls.setup{} -- go
+require'lspconfig'.sumneko_lua.setup{} -- lua
+require'lspconfig'.clangd.setup{} -- C
+
+require'lspconfig'.lemminx.setup{ --xml
         settings = {
                 filetypes = {
                         "model"
@@ -11,9 +15,7 @@ require'lspconfig'.lemminx.setup{
         }
 }
 
--- cpp LSP
-require'lspconfig'.clangd.setup{}
-
+-- Set up CoQ
 vim.cmd([[ 
         augroup coq-start
                 autocmd!
@@ -21,6 +23,8 @@ vim.cmd([[
         augroup END
 ]])
 
+
+-- Set up diagnostic settings
 vim.diagnostic.config({
   virtual_text = false
 })

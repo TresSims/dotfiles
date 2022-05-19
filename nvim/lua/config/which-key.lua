@@ -102,6 +102,12 @@ wk.register({
                 name = "help",
                 l = { ":LspInfo<CR>", "lsp" }
         },
+        l = {
+                name = "lsp",
+                h = { ":LspInfo<CR>", "Help" },
+                i = { ":LspInstall<CR>", "Install" },
+                s = { ":LspStart<CR>", "Start" }
+        },
         s = {
                 name = "Session",
                 s = {"<Cmd>:SSave<Cr>", "Save"},
