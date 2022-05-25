@@ -1,5 +1,3 @@
-require('impatient')
-
 -- Set up basic vim settings
 require('settings')
 

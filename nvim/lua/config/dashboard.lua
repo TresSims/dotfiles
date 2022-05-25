@@ -2,7 +2,6 @@ vim.cmd([[
 
 function s:commands()
         return [
-        \ {'line': 'Open Project', 'cmd': 'Telescope project'},
         \ {'line': 'File Browser ', 'cmd': 'Telescope file_browser'},
         \ ]
 endfunction

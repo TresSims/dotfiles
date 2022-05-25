@@ -29,11 +29,14 @@ return require('packer').startup(function()
 	-- Telescope ecosystem
         use {
           'nvim-telescope/telescope.nvim',
-          'nvim-telescope/telescope-ui-select.nvim',
-          'nvim-telescope/telescope-file-browser.nvim',
-          'nvim-telescope/telescope-project.nvim',
           requires =  {
                 { 'nvim-lua/plenary.nvim' }
+          }
+        }
+        use {
+          'nvim-telescope/telescope-file-browser.nvim',
+          requires = {
+                {'nvim-telescope/telescope.nvim'}
           },
           config="require('config.telescope')"
         }
