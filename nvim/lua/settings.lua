@@ -37,3 +37,7 @@ vim.cmd[[set clipboard=unnamedplus]] -- Use system clipbord
 vim.cmd[[set backupdir=~/.config/nvim/backups]] -- Keep backups
 vim.cmd[[set backupdir=~/.config/nvim/backups]] -- Keep backups
 vim.cmd[[set nowrap]] -- Truncate long lines
+
+-- Set up some of my less common file types
+vim.cmd([[au BufRead,BufNewFile *.model set filetype=xml]]) -- 3MF .model files
+vim.cmd([[au BufRead,BufNewFile *.gs set filetype=javascript]]) -- Google AppScript files

@@ -2,6 +2,7 @@ require('lspconfig').pyright.setup {}
 require('lspconfig').gopls.setup {}
 require('lspconfig').clangd.setup {}
 require('lspconfig').lemminx.setup {}
+require('lspconfig').eslint.setup {}
 
 require('lspconfig').sumneko_lua.setup {
         on_attach = on_attach,
@@ -31,7 +32,6 @@ require('lspconfig').sumneko_lua.setup {
 }
 
 -- lspconfig.tailwindcss.setup { }
--- lspconfig.eslint.setup { }
 -- lspconfig.jsonls.setup { }
 -- lspconfig.vuels.setup { }
 
@@ -52,5 +52,3 @@ vim.diagnostic.config({
 -- Show line diagnostics automatically in hover window
 vim.o.updatetime = 1500
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
-
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
