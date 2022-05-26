@@ -1,0 +1,7 @@
+{
+        "links": {
+                "config.rasi": "~/.config/rofi/config.rasi",
+                "rounded-common.rasi": "~/.config/rofi/rounded-common.rasi",
+                "rounded-tokyonight.rasi": "~/.config/rofi/rounded-tokyonight.rasi",
+        }
+}
