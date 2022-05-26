@@ -19,3 +19,4 @@ This repo contains configurations settings for:
 - picom
 - ranger
 - rofi
+- polybar

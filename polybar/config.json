@@ -1,0 +1,10 @@
+{
+        "links": {
+                "config": "~/.config/polybar/config",
+                "scripts": "~/.config/polybar/scripts",
+                "launch.fish": "~/.config/polybar/launch.fish"
+        },
+        "hooks": {
+                "post_install": "~/.config/polybar/scripts/setup_rofi.fish"
+        }
+}
