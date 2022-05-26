@@ -88,7 +88,7 @@ enable-ipc = true
 
 modules-left = left-awesome awesome right-awsesome left-aweome pavolume right-awesome
 modules-center = left-awesome cpu github memory right-awesome
-modules-right = left-awesome system-usb-mount right-awesome left-awesome date shutdown right-awesome
+modules-right = left-awesome system-usb-mount date shutdown right-awesome
 
 font-0 = "JetBrains Mono:size=10;1"
 font-1 = "Iosevka Nerd Font Mono:size=15;3"
