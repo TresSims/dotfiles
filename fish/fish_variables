@@ -34,6 +34,7 @@ SETUVAR --export SSH_AUTH_SOCK:/tmp/ssh\x2dXXXXXXTDiruy/agent\x2e723317
 SETUVAR TEMP:/tmp
 SETUVAR __fish_initialized:3400
 SETUVAR ascii_path:/home/tsims/\x2econfig/ascii/rcs_impossible
+SETUVAR --export aws_access_key:MhiSclfMsnI7hwcsmpqPzsv02Ny84N/6NkdYTcee
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7

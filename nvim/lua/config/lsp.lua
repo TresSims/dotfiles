@@ -1,4 +1,4 @@
-require('lspconfig').pyright.setup {}
+require('lspconfig').pylsp.setup {}
 require('lspconfig').gopls.setup {}
 require('lspconfig').clangd.setup {}
 require('lspconfig').lemminx.setup {}
@@ -43,6 +43,13 @@ vim.cmd([[
         augroup END
 ]])
 
+vim.cmd([[
+augroup fmt
+        autocmd!
+        autocmd BufWritePre * lua vim.lsp.buf.formatting()
+augroup END
+]]
+)
 
 -- Set up diagnostic settings
 vim.diagnostic.config({
