@@ -26,6 +26,7 @@ SETUVAR NICKEL_BOT_SECRET:ay0bpjc058lk797dwwry6mrj3p5nc5
 SETUVAR --export --path PYTHONPATH:/opt/hfs18\x2e5/houdini/python3\x2e7libs/
 SETUVAR --export PYTHON_SMITHS_ENVIRONEMNT:glb\x2emodels\x2edev
 SETUVAR --export PYTHON_SMITHS_ENVIRONMENT:glb\x2emodels\x2edev
+SETUVAR --export --path QT_PLUGIN_PATH:/usr/lib/qt/plugins/
 SETUVAR --export QT_QPA_PLATFORMTHEME:qt5ct
 SETUVAR --export SIDEFX_PW:ij2H5WXG1g6b
 SETUVAR --export SIDEFX_USER:tres\x2esims95\x40gmail\x2ecom
