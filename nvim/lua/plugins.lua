@@ -41,6 +41,9 @@ return require('packer').startup(function()
                 config = "require('config.telescope')"
         }
 
+        -- colorize hex codes
+        use { 'norcalli/nvim-colorizer.lua', config = "require('colorizer').setup()" }
+
         --That nice modeline at the bottom
         use {
                 'nvim-lualine/lualine.nvim',
