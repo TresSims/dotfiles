@@ -1,6 +1,7 @@
 {
         "links": {
                 "slate_bottom.rasi": "~/.config/rofi/launchers/slate/slate_bottom.rasi",
-                "tokyonight.rasi": "~/.config/rofi/launchers/slate/styles/tokyonight.rasi"
+                "tokyonight.rasi": "~/.config/rofi/launchers/slate/styles/tokyonight.rasi",
+                "launcher_slate": "~/.config/rofi/bin/launcher_slate"
         }
 }
