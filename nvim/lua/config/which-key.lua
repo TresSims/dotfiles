@@ -132,4 +132,9 @@ wk.register({
 
         }
 }, { prefix = "<leader>" })
+wk.register({
+        t = {':bn<CR>', 'Next Buffer'},
+        T = {':bp<CR>', 'Next Buffer'}
+}, { prefix = "g" })
+
 vim.cmd[[set timeoutlen=250]]
