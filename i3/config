@@ -212,9 +212,10 @@ bindsym $mod+r mode "resize"
 
 # hide borders
 default_border pixel 2
-default_floating_border pixel 2
+default_floating_border pixel 0
 hide_edge_borders smart
 for_window [class="^.*"] border pixel 1
+for_window [class="Guake"] border pixel 0
 # class                 border  backgr. text    indicator
 client.focused          #7aa2f7 #7aa2f7 #1a1b26 #7aa2f7
 client.unfocused        #1a1b26 #1a1b26 #565f89 #1a1b26
