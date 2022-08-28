@@ -225,13 +225,6 @@ client.background       #1a1b26
 
 gaps inner 8
 
-# Floating Terminal
-# bindsym $mod+t exec --no-startup-id yakuake
-# for_window [class="yakuake"] floating enable move left 1px, border pixel 0
-
-# Additional Floatin Windows
-for_window [class="steam_app_1082710"] floating enable move position center
-
 # Screenshot utility
 bindsym Print exec --no-startup-id flameshot gui
 
