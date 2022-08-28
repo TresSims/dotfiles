@@ -241,7 +241,7 @@ bindsym $mod+p exec --no-startup-id /home/tsims/.config/scripts/ptoggle
 # Show enpass
 bindsym $mod+o exec --no-startup-id /opt/enpass/Enpass showassistant
 
-# Reset DE
+# Reset Desktop background
 exec_always --no-startup-id nitrogen --restore
 
 # background daemons
@@ -253,6 +253,3 @@ exec_always --no-startup-id dropbox
 exec_always --no-startup-id discord
 exec_always --no-startup-id steam
 exec_always --no-startup-id sesinetd
-
-# Mount Google Drives
-exec_always --no-startup-id /home/tsims/.config/scripts/gdrive_setup
