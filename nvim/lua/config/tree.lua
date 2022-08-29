@@ -1,7 +1,7 @@
 require'nvim-tree'.setup {
   disable_netrw        = false,
   hijack_netrw         = true,
-  open_on_setup        = false,
+  open_on_setup        = true,
   ignore_ft_on_setup   = {},
   auto_reload_on_write = true,
   open_on_tab          = false,
@@ -63,7 +63,7 @@ require'nvim-tree'.setup {
       global = false,
     },
     open_file = {
-      quit_on_open = true,
+      quit_on_open = false,
       window_picker = {
         enable = true,
         chars = "asdfjkl",
