@@ -1,6 +1,6 @@
 {
         "links": {
-                "config": "~/.config/polybar/config",
+                "config.ini": "~/.config/polybar/config.ini",
                 "scripts": "~/.config/polybar/scripts",
                 "launch.fish": "~/.config/polybar/launch.fish"
         },

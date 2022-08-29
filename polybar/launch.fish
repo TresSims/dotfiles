@@ -2,4 +2,4 @@
 
 killall -q polybar
 
-polybar awesome-top
+polybar bar
