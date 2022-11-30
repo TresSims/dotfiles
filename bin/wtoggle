@@ -2,4 +2,4 @@
 
 xsetwacom --set 11 MapToOutput next
 xsetwacom --set 12 MapToOutput next
-xsetwacom --set 17 MapToOutput next
+xsetwacom --set 13 MapToOutput next
