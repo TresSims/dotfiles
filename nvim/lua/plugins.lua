@@ -1,4 +1,5 @@
 return require("packer").startup(function()
+	-- Run packer updates when plugin page is edited
 	vim.cmd([[
 	  augroup packer_user_config
 	    autocmd!
@@ -13,7 +14,7 @@ return require("packer").startup(function()
 	use("lewis6991/impatient.nvim")
 	use("nathom/filetype.nvim")
 
-	-- icons for all
+	-- icons
 	use({ "nvim-tree/nvim-web-devicons" })
 
 	-- a startscreen
@@ -25,7 +26,7 @@ return require("packer").startup(function()
 	-- Theme Plugin
 	use({ "folke/tokyonight.nvim", config = "require('config.theme')" })
 
-	-- Treesitter
+	-- Treesitter, at least does some folding for us
 	use({ "nvim-treesitter/nvim-treesitter", config = "require('config.treesitter')" })
 	use({ "nvim-treesitter/nvim-treesitter-textobjects", after = { "nvim-treesitter" } })
 
