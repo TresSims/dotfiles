@@ -98,6 +98,9 @@ return require("packer").startup(function()
 	-- A great tool for adding, removing and changing braces, brackets, quotes and various tags around your text.
 	use("tpope/vim-surround")
 
+	-- godot setup
+	use("habamax/vim-godot")
+
 	-- I want to see my hotkey trees
 	use({ "folke/which-key.nvim", config = "require('config.which-key')" })
 end)
