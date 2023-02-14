@@ -12,7 +12,6 @@ return require("packer").startup(function()
 
 	-- start up faster
 	use("lewis6991/impatient.nvim")
-	use("nathom/filetype.nvim")
 
 	-- icons
 	use({ "nvim-tree/nvim-web-devicons" })
@@ -99,7 +98,7 @@ return require("packer").startup(function()
 	use("tpope/vim-surround")
 
 	-- godot setup
-	use("habamax/vim-godot")
+	use({"habamax/vim-godot", config="require('config.godot')"})
 
 	-- I want to see my hotkey trees
 	use({ "folke/which-key.nvim", config = "require('config.which-key')" })
