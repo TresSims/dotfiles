@@ -55,8 +55,8 @@ return require("packer").startup(function()
 
 	-- ...and the bufferline at the top
 	use({
-		"akinsho/bufferline.nvim",
-		config = "require('config.topline')",
+		"noib3/nvim-cokeline",
+		config = "require('config.bufferline')",
 	})
 
 	-- A nice tree
@@ -98,7 +98,7 @@ return require("packer").startup(function()
 	use("tpope/vim-surround")
 
 	-- godot setup
-	use({"habamax/vim-godot", config="require('config.godot')"})
+	use({ "habamax/vim-godot", config = "require('config.godot')" })
 
 	-- I want to see my hotkey trees
 	use({ "folke/which-key.nvim", config = "require('config.which-key')" })
