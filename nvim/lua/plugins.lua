@@ -53,10 +53,17 @@ return require("packer").startup(function()
 		config = "require('config.lualine')",
 	})
 
-	-- ...and the bufferline at the top
+	-- bufferline at the top
 	use({
 		"noib3/nvim-cokeline",
 		config = "require('config.bufferline')",
+	})
+
+	-- pick windows
+	use({
+		"s1n7ax/nvim-window-picker",
+		tag = "v1.*",
+		config = "require('config.window-picker')",
 	})
 
 	-- A nice tree

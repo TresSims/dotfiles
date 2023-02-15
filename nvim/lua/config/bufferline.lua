@@ -96,7 +96,7 @@ local components = {
 
 	close_or_unsaved = {
 		text = function(buffer)
-			return buffer.is_modified and "●" or ""
+			return buffer.is_modified and "●" or ""
 		end,
 		fg = function(buffer)
 			return buffer.is_modified and green or nil
@@ -123,7 +123,7 @@ require("cokeline").setup({
 		fg = function(buffer)
 			return buffer.is_focused and get_hex("Normal", "fg") or get_hex("Comment", "fg")
 		end,
-		bg = get_hex("ColorColumn", "bg"),
+		bg = colors.bg_statusline,
 	},
 
 	sidebar = {

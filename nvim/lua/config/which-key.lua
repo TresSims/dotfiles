@@ -1,3 +1,5 @@
+local picker = require("window-picker")
+
 require("which-key").setup({
 	plugins = {
 		marks = true, -- shows a list of your marks on ' and `
@@ -143,7 +145,13 @@ wk.register({
 	},
 	p = {
 		name = "Pick",
-		w = {},
+		w = {
+			function()
+				local picked_window_id = picker.pick_window() or vim.api.nvim_get_current_win()
+				vim.api.nvim_set_current_win(picked_window_id)
+			end,
+			"window",
+		},
 		b = { "<Plug>(cokeline-pick-focus)", "buffer" },
 	},
 }, { prefix = "<leader>" })
