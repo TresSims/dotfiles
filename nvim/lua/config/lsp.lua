@@ -1,8 +1,10 @@
 require("lspconfig").pylsp.setup({})
 require("lspconfig").gopls.setup({})
-require("lspconfig").clangd.setup({})
 require("lspconfig").eslint.setup({})
 require("lspconfig").gdscript.setup({})
+require("lspconfig").clangd.setup({})
+
+require("lspconfig").arduino_language_server.setup({})
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
