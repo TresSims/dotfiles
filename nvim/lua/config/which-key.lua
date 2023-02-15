@@ -70,8 +70,18 @@ wk.register({
 	[":"] = { "<Cmd>Telescope commands<CR>", "Search Commands" },
 	b = {
 		name = "Buffer",
-		n = { ":bn<CR>", "Next Buffer" },
-		p = { ":bp<CR>", "Previous Buffer" },
+		["0"] = { "<Plug>(cokeline-focus-0)", "Go To Buffer 0" },
+		["1"] = { "<Plug>(cokeline-focus-1)", "Go To Buffer 1" },
+		["2"] = { "<Plug>(cokeline-focus-2)", "Go To Buffer 2" },
+		["3"] = { "<Plug>(cokeline-focus-3)", "Go To Buffer 3" },
+		["4"] = { "<Plug>(cokeline-focus-4)", "Go To Buffer 4" },
+		["5"] = { "<Plug>(cokeline-focus-5)", "Go To Buffer 5" },
+		["6"] = { "<Plug>(cokeline-focus-6)", "Go To Buffer 6" },
+		["7"] = { "<Plug>(cokeline-focus-7)", "Go To Buffer 7" },
+		["8"] = { "<Plug>(cokeline-focus-8)", "Go To Buffer 8" },
+		["9"] = { "<Plug>(cokeline-focus-9)", "Go To Buffer 9" },
+		n = { "<Plug>(cokeline-focus-next)", "Next Buffer" },
+		p = { "<Plug>(cokeline-focus-prev)", "Previous Buffer" },
 		c = { ":bn<CR>:bw#<CR>", "Close Buffer" },
 		b = { "<Cmd>Telescope buffers<CR>", "Search Buffers" },
 		s = { "<Cmd>Telescope current_buffer_fizzy_find<CR>", "Search Inside Buffer" },
@@ -130,6 +140,11 @@ wk.register({
 		w = { "<C-W>w", "Other Window" },
 		["|"] = { ":vsp<Cr>", "Split" },
 		["-"] = { ":sp<Cr>", "Split" },
+	},
+	p = {
+		name = "Pick",
+		w = {},
+		b = { "<Plug>(cokeline-pick-focus)", "buffer" },
 	},
 }, { prefix = "<leader>" })
 
