@@ -107,6 +107,9 @@ return require("packer").startup(function()
 	-- godot setup
 	use({ "habamax/vim-godot", config = "require('config.godot')" })
 
+        -- nvim trouble
+        use({"folke/trouble.nvim", config = "require('config.trouble')"})
+
 	-- I want to see my hotkey trees
 	use({ "folke/which-key.nvim", config = "require('config.which-key')" })
 end)
