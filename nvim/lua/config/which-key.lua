@@ -85,6 +85,7 @@ wk.register({
 		n = { "<Plug>(cokeline-focus-next)", "Next Buffer" },
 		p = { "<Plug>(cokeline-focus-prev)", "Previous Buffer" },
 		c = { ":bn<CR>:bw#<CR>", "Close Buffer" },
+		C = { "<Plug>(cokeline-pick-close)", "Pick and close buffer" },
 		b = { "<Cmd>Telescope buffers<CR>", "Search Buffers" },
 		s = { "<Cmd>Telescope current_buffer_fizzy_find<CR>", "Search Inside Buffer" },
 		f = { ":Format<CR>", "format" },
