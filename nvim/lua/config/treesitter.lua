@@ -34,12 +34,12 @@ require("nvim-treesitter.configs").setup({
 		additional_vim_regex_highlighting = { "gdscript", "godot_resource" },
 	},
 	indent = {
-		diable = { "gdscript" },
+		disable = { "gdscript" },
 	},
 })
 
 vim.cmd([[set foldmethod=expr]])
 vim.cmd([[set foldexpr=nvim_treesitter#foldexpr()]])
-vim.cmd([[set foldminlines=10]])
+vim.cmd([[set foldminlines=5]])
 vim.cmd([[set foldnestmax=4]])
 vim.cmd([[set foldlevelstart=99]])
