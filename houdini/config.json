@@ -1,0 +1,8 @@
+{
+        "links": {
+                "TokyoNight_basic_colors.inc": "~/houdini19.5/config/TokyoNight_basic_colors.inc",
+                "TokyoNight_DarkTheme.hcs": "~/houdini19.5/config/TokyoNight_DarkTheme.hcs",
+                "TokyoNight_NodeGraphCommon.inc": "~/houdini19.5/config/TokyoNight_NodeGraphCommon.inc",
+                "TokyoNight_NodeGraphDark.inc": "~/houdini19.5/config/TokyoNight_NodeGraphDark.inc"
+        }
+}
