@@ -6,67 +6,66 @@ A general warning for installing these dotfiles as described below, they will
 OVERWRITE anything you are currently using, and if you have any custom settings, it is
 probably best to make sure you have created backups before running this.
 
-# Pre-requisites
+# Installing the dotfiles
 
-This repo contains configurations settings for a variety of applications.
-If you run the `setup.fish` file it will install all of the packages you need to get set
-up after a fresh install.
+## Using Setup.Fish
 
-## Setup.Fish
 This script does a number of things currently:
 
 * Sets the semi-required `PUNCTUAL_PACKAGE_DIR` variable.
 * Installs `yay` for managing packages from the AUR
 * Installs all packages that I need on my computer, from the `packages` list
-* Sets up some required mods using the asdf-vm
+* Initializes the submodules in this repository
 
-## Submodules
-Some of the themes and icon packs I use, I haven't made myself. Where possible I use
-submodules to keep the themes up to date, and provide credit where it is due.
+To run the script, first make sure it is executable
+`chmod +x ./setup.fish`
 
-To set up the submodules run
-```
-git submodule init
-git submodule update
-```
+Then run
+`./setup.fish`
+and follow the prompts.
 
-## Punctual
-I use puncual to install my dotfiles. Basically it creates symlinks between the files
+This script is designed to set up my computer from scratch for a fresh install, while it
+may be useful to you, you probably don't want to try and install all my packages.
+
+If you do not install all of these packages, you will at least need to install  [Punctual](https://github.com/ariataylor90/punctual)
+to use this script.
+
+## Using Punctual
+If you don't want to use the setup script, you can mix and match any of these scripts using
+[Punctual](https://github.com/ariataylor90/punctual).
+
+Basically it creates symlinks between the files
 here to where they should be on your file system
 
 `pip install punctual`
 
-Read more [here](https://github.com/ariataylor96/punctual)
+To install ALL packages with punctual, run:
 
-# Installation
+`pcl install . --force`
 Warning
 : This deletes any existing files without backing them up, make any backups you want
 before running these commands
 
-From there you can install all the packages with
-`pcl install . --force`
 
-or individually with
-`pcl install <package name> --force`
+To install the dotfiles for a specific app, e.g. nvim, run:
 
+`pcl install nvim --force`
 
-After this, there are still some packages that must be configured using command line
+Using this method, you will want to use the name of the folder to sepcify which module
+to install. If you don't like any of these methods, you can copy and paste these files
+manually.
+
+# Post installation setup
+There are still some packages that must be configured using command line
 tools or GUI's. This includes:
 
 * Setting GTK theme, including:
-    * TokyoNight Application Theme
-    * Layan Cursor Theme
+    * TokyoNight Application theme
+    * Layan Cursor theme
     * Candy icon theme
+    * Houdini theme
+    * Blender theme
+    * Grub
 
-For this, I use `lxappearance`
-
-You will also need to add the line:
-`GRUB_THEME="/boot/grub/themes/tokyo-night/theme.txt"`
-
-I decided against automatically editing any boot configs. To make sure these chagnes
-get applied to your grub config, run:
-`sudo grub-mkconfig -o /boot/grub/grub.cfg`
-
-To finalize the install of the grub theme. Although there are some scripts that run with
-super admin privliges, I decided it was best not to fuck with people grub configs willy
-nilly.
+I am in the process of adding readme's for how to do manual installation for all of the
+dotfiles, but in the meantime, feel free to reach out for help.
