@@ -1,5 +1,5 @@
 #! /usr/bin/fish
 
-xsetwacom --set 11 MapToOutput next
-xsetwacom --set 12 MapToOutput next
-xsetwacom --set 13 MapToOutput next
+for line in (xsetwacom --list)
+       xsetwacom --set (string match -r  '\d+' $line) MapToOutput next
+end
