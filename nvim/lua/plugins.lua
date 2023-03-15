@@ -10,6 +10,14 @@ return require("packer").startup(function()
 	-- Manage the package magager
 	use("wbthomason/packer.nvim")
 
+	-- Install non-vim package things
+	use({
+		"williamboman/mason.nvim",
+		config = "require('config.mason')",
+	})
+
+	use({ "williamboman/mason-lspconfig.nvim", config = "require('config.mason-lsp')" })
+
 	-- start up faster
 	use("lewis6991/impatient.nvim")
 
@@ -107,8 +115,8 @@ return require("packer").startup(function()
 	-- godot setup
 	use({ "habamax/vim-godot", config = "require('config.godot')" })
 
-        -- nvim trouble
-        use({"folke/trouble.nvim", config = "require('config.trouble')"})
+	-- nvim trouble
+	use({ "folke/trouble.nvim", config = "require('config.trouble')" })
 
 	-- I want to see my hotkey trees
 	use({ "folke/which-key.nvim", config = "require('config.which-key')" })
