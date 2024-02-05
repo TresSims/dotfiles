@@ -19,3 +19,6 @@
 [submodule "grub/tokyo-night-grub"]
 	path = grub/tokyo-night-grub
 	url = git@github.com:mino29/tokyo-night-grub.git
+[submodule "nvim"]
+	path = nvim
+	url = git@github.com:TresSims/nvim
