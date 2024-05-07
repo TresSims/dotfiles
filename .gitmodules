@@ -1,9 +1,6 @@
 [submodule "candy-icons"]
 	path = candy-icons
 	url = git@github.com:EliverLara/candy-icons.git
-[submodule "spicetify/Themes/Spicetify"]
-	path = spicetify/Themes/Comfy_Git
-	url = git@github.com:Comfy-Themes/Spicetify
 [submodule "Layan-cursors"]
 	path = Layan-cursors
 	url = https://github.com/vinceliuice/Layan-cursors
