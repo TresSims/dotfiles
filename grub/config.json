@@ -1,5 +1,5 @@
 {
-        "hooks": {
-                "pre_install": "$PUNCTUAL_PACKAGE_DIR/grub/pre_install.fish"
-        }
+  "links": {
+      "tokyo-night-grub": "/boot/grub/themes/tokyo-night-grub"
+  }
 }
