@@ -1,12 +1,12 @@
-[Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=oMaterial-Black-Blueberry-4.0
-Comment=A Material Design theme
+[Desktop Entry]
+Name=Tokyonight-Dark
+Comment=An Flat Gtk+ theme based on Elegant Design
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=Material-Black-Blueberry-4.0
-MetacityTheme=Material-Black-Blueberry-4.0
-IconTheme=Material-Black-Blueberry
-CursorTheme=Adwaita
-CursorSize=24
+GtkTheme=Tokyonight-Dark
+MetacityTheme=Tokyonight-Dark
+IconTheme=Tela-circle-Dark
+CursorTheme=Tokyonight-cursors
+ButtonLayout=close,minimize,maximize:menu
