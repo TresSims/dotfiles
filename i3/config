@@ -52,8 +52,10 @@ bindsym $mod+Return exec kitty
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
+# start Launchers
+# dmenu
 bindsym $mod+d exec dmenu_run
+# slate
 bindsym Ctrl+Shift+space exec --no-startup-id ~/.config/rofi/bin/launcher_slate
 # bindsym Ctrl+space exec --no-startup-id launcher_misc
 # A more modern dmenu replacement is rofi:
@@ -172,6 +174,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Take a screenshot
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui
+
+bindsym $mod+Shift+f exec nemo
 
 
 # resize window (you can also use the mouse for that)
