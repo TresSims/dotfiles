@@ -250,10 +250,9 @@ exec_always --no-startup-id guake
 exec_always --no-startup-id dropbox
 exec_always --no-startup-id discord
 exec_always --no-startup-id sesinetd
-exec_always --no-startup-id synergy
-exec_always --no-startup-id Deckboard-2.0.4.AppImage
 exec_always --no-startup-id systray
 exec_always --no-startup-id xdo hide -N stalonetray
+exec_always --no-startup-id telegram-desktop
 
 # Mount Google Drives
 exec_always --no-startup-id /home/tsims/.config/scripts/gdrive_setup
