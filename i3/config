@@ -23,7 +23,7 @@ set $right_monitor DP-2
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:JetBrainsmono 10
+font pango:FiraCode Nerd Font
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -47,7 +47,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec wezterm
+bindsym F12 exec tdrop -am  -w -2 -x 1 -h 45% -y 55% wezterm start --always-new-process
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -207,6 +208,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
@@ -218,7 +220,6 @@ default_border pixel 2
 default_floating_border pixel 0
 hide_edge_borders smart
 for_window [class="^.*"] border pixel 1
-for_window [class="Guake"] border pixel 0
 for_window [class="stalonetray"] border pixel 0
 # class                 border  backgr. text    indicator
 client.focused          #7aa2f7 #7aa2f7 #1a1b26 #7aa2f7
@@ -246,7 +247,6 @@ exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id ~/.config/polybar/launch.fish
 exec_always --no-startup-id dunst
 exec_always --no-startup-id "picom -b"
-exec_always --no-startup-id guake
 exec_always --no-startup-id dropbox
 exec_always --no-startup-id discord
 exec_always --no-startup-id sesinetd
