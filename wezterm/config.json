@@ -1,5 +1,6 @@
 {
   "links": {
-    "wezterm.lua": "~/.wezterm.lua"
+    "wezterm.lua": "~/.wezterm.lua",
+    "wezterm": "~/.config/wezterm"
   }
 }
