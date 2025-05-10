@@ -1,8 +1,8 @@
 {
-        "autodiscover": true,
-        "links":{
-                "candy-icons": "~/.icons/candy-icons",
-                "Layan-cursors/dist": "~/.icons/Layan-cursors",
-                "TokyoNight": "~/.themes/TokyoNight"
-        }
+  "autodiscover": true,
+  "links": {
+    "candy-icons": "~/.icons/candy-icons",
+    "Layan-cursors/dist": "~/.icons/Layan-cursors",
+    "TokyoNight": "~/.themes/TokyoNight"
+  }
 }
