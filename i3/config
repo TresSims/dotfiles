@@ -51,6 +51,12 @@ bindsym $mod+Return exec wezterm
 bindsym F12 exec tdrop -am  -w -2 -x 1 -h 45% -y 55% wezterm start --always-new-process --class=ddterm
 for_window [class="ddterm"] floating enable
 
+
+# Per-Window modes
+for_window [class="stalonetray"] floating enable
+for_window [class="iwgtk"] floating enable
+
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -258,4 +264,3 @@ exec_always --no-startup-id telegram-desktop
 # Mount Google Drives
 exec_always --no-startup-id /home/tsims/.config/scripts/gdrive_setup
 
-for_window [class="stalonetray"] floating enable
