@@ -41,3 +41,5 @@ for file in (ls $PUNCTUAL_PACKAGE_DIR/fish/completions/)
 end
 
 starship init fish | source
+
+fish_vi_key_bindings
