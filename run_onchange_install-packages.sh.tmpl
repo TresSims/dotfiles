@@ -1,0 +1,11 @@
+#! /bin/bash
+
+{{if eq .chezmoi.osRelease.name "Arch Linux" -}}
+
+yay -S --needed \
+{{ range .packages.yay.core -}}
+{{ . }} \
+{{ end -}}
+
+
+{{ end -}}
