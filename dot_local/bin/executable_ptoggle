@@ -1,0 +1,10 @@
+#!/usr/bin/fish
+
+set picom_up (ps -aux | grep [p]icom | wc -l)
+if ps -aux | grep [p]icom
+  echo killin picom
+  pkill picom
+else
+  echo starting picom
+  picom -b
+end
