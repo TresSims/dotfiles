@@ -16,6 +16,9 @@ set $left_monitor HDMI-0
 set $center_monitor DP-0
 set $right_monitor DP-2
 
+# Desktop Background
+exec --no-startup-id feh --bg-center ~/.config/desktop.jpg
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -246,9 +249,6 @@ bindsym $mod+p exec --no-startup-id ptoggle
 
 # Show enpass
 bindsym $mod+o exec --no-startup-id /opt/enpass/Enpass showassistant
-
-# Reset Desktop background
-exec_always --no-startup-id nitrogen --restore
 
 # background daemons
 exec_always --no-startup-id ~/.config/polybar/launch.fish

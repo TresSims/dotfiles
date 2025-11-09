@@ -1,7 +1,7 @@
 packages:
   yay:
     core:
-      - 'git'
+      - git
       - act
       - amd-ucode
       - arandr
@@ -173,6 +173,7 @@ packages:
       - xorg-xwud
       - zaproxy
       - zip
+      - nitrogen
     desktop:
       - blender
       - calibre
