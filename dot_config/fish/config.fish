@@ -36,8 +36,8 @@ set -g fish_pager_color_completion $foreground
 set -g fish_pager_color_description $comment
 
 # Source completion dir
-for file in (ls $PUNCTUAL_PACKAGE_DIR/fish/completions/)
-    source $PUNCTUAL_PACKAGE_DIR/fish/completions/$file
+for file in (ls ~/.config/fish/completions/)
+    source ~/.config/fish/completions/$file
 end
 
 starship init fish | source
