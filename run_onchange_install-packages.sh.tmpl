@@ -6,6 +6,9 @@ yay -S --needed \
 {{ range .packages.yay.core -}}
 {{ . }} \
 {{ end -}}
-
-
+{{ if eq .chezmoi.hostname "laptop-*" -}}
+{{ range .packages.yay.laptop -}}
+{{ . }} \
+{{ end -}}
+{{ end -}}
 {{ end -}}

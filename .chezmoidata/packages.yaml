@@ -178,6 +178,8 @@ packages:
       - lazygit
       - luarocks
       - nomachine
+      - jq
+      - yq
     desktop:
       - blender
       - calibre
@@ -192,4 +194,5 @@ packages:
       - tiled
       - xf86-input-wacom
     laptop:
+      - brigntessctl
     

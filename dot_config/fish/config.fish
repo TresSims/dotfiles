@@ -1,5 +1,7 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    if not vault token lookup >/dev/null
+        set -Ux VAULT_TOKEN (vault login -method=oidc -token-only)
+    end
 end
 
 set -l foreground c0caf5
