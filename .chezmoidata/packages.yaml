@@ -180,6 +180,7 @@ packages:
       - nomachine
       - jq
       - yq
+      - gtk-murrine-engine
     desktop:
       - blender
       - calibre
@@ -195,4 +196,4 @@ packages:
       - xf86-input-wacom
     laptop:
       - brigntessctl
-    
+      - powertop
