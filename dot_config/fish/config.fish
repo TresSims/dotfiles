@@ -1,5 +1,5 @@
 if status is-interactive
-    if not vault token lookup >/dev/null
+    if not vault token lookup
         set -Ux VAULT_TOKEN (vault login -method=oidc -token-only)
     end
 end

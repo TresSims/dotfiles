@@ -1,1 +1,3 @@
-{{ (vault "chezmoi/laptop-01.tres.sims.family/fish_variables").data.data }}
+{{ range (vault "chezmoi/laptop-01.tres.sims.family/fish_variables").data.data.data -}}
+{{ . }}
+{{ end -}}
