@@ -1,7 +1,7 @@
 if status is-interactive
-    if not vault token lookup
-        set -Ux VAULT_TOKEN (vault login -method=oidc -token-only)
-    end
+    # if not vault token lookup
+    #     set -Ux VAULT_TOKEN (vault login -method=oidc -token-only)
+    # end
 end
 
 set -l foreground c0caf5
@@ -47,3 +47,8 @@ starship init fish | source
 fish_vi_key_bindings
 
 source ~/.config/fish/asdf.fish
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/tsims/.local/bin/google-cloud-sdk/path.fish.inc' ]
+    . '/home/tsims/.local/bin/google-cloud-sdk/path.fish.inc'
+end
