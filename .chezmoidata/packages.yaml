@@ -1,6 +1,7 @@
 packages:
   yay:
     core:
+      - fd
       - git
       - gum
       - act
