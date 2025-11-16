@@ -1,5 +1,6 @@
 #! /bin/bash
 
+# Install Arch packages
 {{if eq .chezmoi.osRelease.name "Arch Linux" -}}
 
 yay -S --needed \
@@ -12,3 +13,7 @@ yay -S --needed \
 {{ end -}}
 {{ end -}}
 {{ end -}}
+
+# Install local binaries
+curl -o ~/.local/bin/google-cloud-cli.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz
+tar -xf ~/.local/bin/google-cloud-cli.tar.gz -C ~/.local/bin
