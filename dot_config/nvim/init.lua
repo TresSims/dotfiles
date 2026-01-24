@@ -1,2 +1,9 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
+_G.Util = require("util")
+
 require("config.lazy")
+
+require("config.hotkeys")
+
+require("config.autocmds")
+
+require("config.settings")
