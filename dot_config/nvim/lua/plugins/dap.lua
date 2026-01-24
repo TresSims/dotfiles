@@ -53,10 +53,7 @@ return {
     },
 
 		config = function()
-			-- load mason-nvim-dap here, after all adapters have been setup
-			-- if LazyVim.has("mason-nvim-dap.nvim") then
-			-- 	require("mason-nvim-dap").setup(LazyVim.opts("mason-nvim-dap.nvim"))
-			-- end
+			require("mason-nvim-dap").setup() -- TODO: May require mason-nvim-dap opts
 
 			vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
 
