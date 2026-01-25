@@ -2,13 +2,6 @@ return {
 	{
 		"xvzc/chezmoi.nvim",
 		cmd = { "ChezmoiEdit" },
-		keys = {
-			{
-				"<leader>sz",
-				pick_chezmoi,
-				desc = "Chezmoi",
-			},
-		},
 		opts = {
 			edit = {
 				watch = false,
