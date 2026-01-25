@@ -171,13 +171,6 @@ return {
 				end)
 			end
 
-			-- folds
-			if opts.folds.enabled then
-				Snacks.util.lsp.on({ method = "textDocument/foldingRange" }, function()
-					vim.opt.foldexpr = "v:lua.vim.lsp.foldexpr()"
-				end)
-			end
-
 			-- code lens
 			if opts.codelens.enabled and vim.lsp.codelens then
 				Snacks.util.lsp.on({ method = "textDocument/codeLens" }, function(buffer)

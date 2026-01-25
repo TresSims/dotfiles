@@ -27,7 +27,7 @@ wk.add({
 	{ "<leader>md", ":execute 'delmarks '.nr2char(getchar())<cr>", desc = "Delete input mark" },
 
 	-- New
-	{ "<leader>n", group = "New" },
+	{ "<leader>n", group = "Notifications" },
   --
   -- Persistance
   { "<leader>p", group = "Sessions" },
