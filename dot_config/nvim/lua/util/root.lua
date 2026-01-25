@@ -9,7 +9,7 @@ function M.get()
 
 	-- Try to get LSP root
 	local bufnr = vim.api.nvim_get_current_buf()
-	local clients = vim.lsp.get_active_clients({ bufnr = bufnr })
+	local clients = vim.lsp.get_clients({ bufnr = bufnr })
 	if #clients > 0 then
 		local lsp_root = clients[1].config.root_dir
 		if lsp_root then

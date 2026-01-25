@@ -1,3 +1,5 @@
+require("config.autocmds.folds")
+
 local function augroup(name)
 	return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
@@ -27,25 +29,5 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 		local current_tab = vim.fn.tabpagenr()
 		vim.cmd("tabdo wincmd =")
 		vim.cmd("tabnext " .. current_tab)
-	end,
-})
-
--- chezmoi auto apply
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-	pattern = { os.getenv("HOME") .. "/.local/share/chezmoi/*" },
-	callback = function(ev)
-		local bufnr = ev.buf
-		local edit_watch = function()
-			require("chezmoi.commands.__edit").watch(bufnr)
-		end
-		vim.schedule(edit_watch)
-	end,
-})
-
--- format on save
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function(args)
-		require("conform").format({ bufnr = args.buf })
 	end,
 })

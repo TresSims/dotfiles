@@ -172,13 +172,11 @@ return {
 			end
 
 			-- folds
-			-- if opts.folds.enabled then
-			-- 	Snacks.util.lsp.on({ method = "textDocument/foldingRange" }, function()
-			-- 		if LazyVim.set_default("foldmethod", "expr") then
-			-- 			LazyVim.set_default("foldexpr", "v:lua.vim.lsp.foldexpr()")
-			-- 		end
-			-- 	end)
-			-- end
+			if opts.folds.enabled then
+				Snacks.util.lsp.on({ method = "textDocument/foldingRange" }, function()
+					vim.opt.foldexpr = "v:lua.vim.lsp.foldexpr()"
+				end)
+			end
 
 			-- code lens
 			if opts.codelens.enabled and vim.lsp.codelens then

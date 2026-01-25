@@ -54,7 +54,8 @@ return {
 
 					-- folds
 					if enabled("folds", "folds") then
-						vim.opt.foldexpr = Util.treesitter.have(nil, "folds") and vim.treesitter.foldexpr() or "0"
+						vim.opt.foldexpr = Util.treesitter.have(nil, "folds") and "v:lua.vim.treesitter.foldexpr()"
+							or "0"
 					end
 				end,
 			})
