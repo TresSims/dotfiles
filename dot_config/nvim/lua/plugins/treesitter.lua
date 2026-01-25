@@ -5,6 +5,7 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
+		branch = "main",
 		lazy = false,
 		build = ":TSUpdate",
 		opts = {
@@ -19,6 +20,7 @@ return {
 				"yaml",
 				"json",
 				"go",
+				"javascript",
 			},
 		},
 		config = function(_, opts)
