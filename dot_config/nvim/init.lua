@@ -2,7 +2,7 @@ _G.Util = require("util")
 
 require("config.lazy")
 
-require("config.hotkeys")
+require("config.keymaps")
 
 require("config.autocmds")
 
