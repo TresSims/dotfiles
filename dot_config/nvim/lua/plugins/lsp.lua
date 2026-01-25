@@ -45,12 +45,6 @@ return {
 				codelens = {
 					enabled = false,
 				},
-				-- Enable this to enable the builtin LSP folding on Neovim.
-				-- Be aware that you also will need to properly configure your LSP server to
-				-- provide the folds.
-				folds = {
-					enabled = true,
-				},
 				-- options for vim.lsp.buf.format
 				-- `bufnr` and `filter` is handled by the LazyVim formatter,
 				-- but can be also overridden when specified
@@ -101,11 +95,6 @@ return {
 					},
 					stylua = { enabled = false },
 					lua_ls = {
-						-- mason = false, -- set to false if you don't want this server to be installed with mason
-						-- Use this to add any additional keymaps
-						-- for specific lsp servers
-						-- ---@type LazyKeysSpec[]
-						-- keys = {},
 						settings = {
 							Lua = {
 								workspace = {
@@ -196,22 +185,14 @@ return {
 			end
 			vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
-			if opts.capabilities then
-				LazyVim.deprecate(
-					"lsp-config.opts.capabilities",
-					"Use lsp-config.opts.servers['*'].capabilities instead"
-				)
-				opts.servers["*"] = vim.tbl_deep_extend("force", opts.servers["*"] or {}, {
-					capabilities = opts.capabilities,
-				})
-			end
-
 			if opts.servers["*"] then
 				vim.lsp.config("*", opts.servers["*"])
 			end
 
 			-- get all the servers that are available through mason-lspconfig
-			local mason_all = have_mason and vim.tbl_keys() -- TODO: May have to add mason-lspconfig mappings here
+			local have_mason = require("lazy.core.config").spec.plugins["mason-lspconfig.nvim"]
+			local mason_all = have_mason
+					and vim.tbl_keys(require("mason-lspconfig.mappings").get_mason_map().lspconfig_to_package)
 				or {} --[[ @as string[] ]]
 			local mason_exclude = {} ---@type string[]
 
@@ -246,7 +227,7 @@ return {
 				require("mason-lspconfig").setup({
 					ensure_installed = vim.list_extend(
 						install,
-						LazyVim.opts("mason-lspconfig.nvim").ensure_installed or {}
+						require("lazy.core.plugin").values("mason-lspconfig.nvim", "opts", false).ensure_installed or {}
 					),
 					automatic_enable = { exclude = mason_exclude },
 				})

@@ -11,6 +11,7 @@ wk.add({
 
 	-- Code
 	{ "<leader>c", group = "Code" },
+  { "<leader>cd", vim.diagnostic.open_float,  desc = "Line Diagnostics" },
 
   -- Debug
   { "<leader>d", group = "Debug" },
