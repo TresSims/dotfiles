@@ -28,6 +28,7 @@ return {
 
 			-- setup treesitter
 			TS.setup(opts)
+			Util.treesitter.get_installed(true)
 
 			vim.api.nvim_create_autocmd("FileType", {
 				group = vim.api.nvim_create_augroup("lazyvim_treesitter", { clear = true }),
@@ -39,9 +40,13 @@ return {
 
 					local function enabled(feat, query)
 						local f = opts[feat] or {}
-						return f.enable ~= false
+						local feat_enabled = f.enable ~= false
 							and not (type(f.disable) == "table" and vim.tbl_contains(f.disable, lang))
 							and Util.treesitter.have(ft, query)
+
+						vim.notify(feat .. " " .. tostring("enabled"))
+
+						return feat_enabled
 					end
 
 					-- highlighting
@@ -51,7 +56,9 @@ return {
 
 					-- indents
 					if enabled("indent", "indents") then
-						vim.opt.indentexpr = Util.treesitter.have(nil, "indents") and TS.indentexpr() or -1
+						vim.opt.indentexpr = Util.treesitter.have(nil, "indents")
+								and "v:lua.vim.require'nvim-treesitter'.indentexpr()"
+							or -1
 					end
 
 					-- folds
