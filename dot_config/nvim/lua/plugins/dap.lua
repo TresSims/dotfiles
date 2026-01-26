@@ -1,21 +1,3 @@
----@param config {type?:string, args?:string[]|fun():string[]?}
-local function get_args(config)
-	local args = type(config.args) == "function" and (config.args() or {}) or config.args or {} --[[@as string[] | string ]]
-	local args_str = type(args) == "table" and table.concat(args, " ") or args --[[@as string]]
-
-	config = vim.deepcopy(config)
-	---@cast args string[]
-	config.args = function()
-		local new_args = vim.fn.expand(vim.fn.input("Run with args: ", args_str)) --[[@as string]]
-		if config.type and config.type == "java" then
-			---@diagnostic disable-next-line: return-type-mismatch
-			return new_args
-		end
-		return require("dap.utils").splitstr(new_args)
-	end
-	return config
-end
-
 return {
 	{
 		"mfussenegger/nvim-dap",
@@ -36,7 +18,6 @@ return {
       { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
       { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
       { "<leader>dc", function() require("dap").continue() end, desc = "Run/Continue" },
-      { "<leader>da", function() require("dap").continue({ before = get_args }) end, desc = "Run with Args" },
       { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
       { "<leader>dg", function() require("dap").goto_() end, desc = "Go to Line (No Execute)" },
       { "<leader>di", function() require("dap").step_into() end, desc = "Step Into" },
@@ -53,23 +34,18 @@ return {
     },
 
 		config = function()
-			require("mason-nvim-dap").setup() -- TODO: May require mason-nvim-dap opts
+			local nvim_dap = require("lazy.core.config").spec.plugins["mason-nvim-dap.nvim"]
+			local values = require("lazy.core.plugin").values(nvim_dap, "opts", false)
+			require("mason-nvim-dap").setup(values)
 
 			vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
 
-			-- for name, sign in pairs(LazyVim.config.icons.dap) do
-			-- 	sign = type(sign) == "table" and sign or { sign }
-			-- 	vim.fn.sign_define(
-			-- 		"Dap" .. name,
-			-- 		{ text = sign[1], texthl = sign[2] or "DiagnosticInfo", linehl = sign[3], numhl = sign[3] }
-			-- 	)
-			-- end
-
-			-- setup dap config by VsCode launch.json file
-			local vscode = require("dap.ext.vscode")
-			local json = require("plenary.json")
-			vscode.json_decode = function(str)
-				return vim.json.decode(json.json_strip_comments(str))
+			for name, sign in pairs(Util.ui.icons.dap) do
+				sign = type(sign) == "table" and sign or { sign }
+				vim.fn.sign_define(
+					"Dap" .. name,
+					{ text = sign[1], texthl = sign[2] or "DiagnosticInfo", linehl = sign[3], numhl = sign[3] }
+				)
 			end
 		end,
 	},
@@ -117,7 +93,8 @@ return {
 			-- You'll need to check that you have the required things installed
 			-- online, please don't ask me how to install them :)
 			ensure_installed = {
-				-- Update this to ensure that you have the debuggers for the langs you want
+				"python",
+				"delve",
 			},
 		},
 		-- mason-nvim-dap is loaded when nvim-dap loads

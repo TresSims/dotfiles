@@ -40,13 +40,9 @@ return {
 
 					local function enabled(feat, query)
 						local f = opts[feat] or {}
-						local feat_enabled = f.enable ~= false
+						return f.enable ~= false
 							and not (type(f.disable) == "table" and vim.tbl_contains(f.disable, lang))
 							and Util.treesitter.have(ft, query)
-
-						vim.notify(feat .. " " .. tostring("enabled"))
-
-						return feat_enabled
 					end
 
 					-- highlighting
