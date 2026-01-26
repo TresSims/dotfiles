@@ -32,30 +32,16 @@ return {
 						},
 					},
 				},
-				-- Enable this to enable the builtin LSP inlay hints on Neovim.
-				-- Be aware that you also will need to properly configure your LSP server to
-				-- provide the inlay hints.
 				inlay_hints = {
-					enabled = true,
-					exclude = { "vue" }, -- filetypes for which you don't want to enable inlay hints
+					enabled = false,
 				},
-				-- Enable this to enable the builtin LSP code lenses on Neovim.
-				-- Be aware that you also will need to properly configure your LSP server to
-				-- provide the code lenses.
 				codelens = {
 					enabled = false,
 				},
-				-- options for vim.lsp.buf.format
-				-- `bufnr` and `filter` is handled by the LazyVim formatter,
-				-- but can be also overridden when specified
 				format = {
 					formatting_options = nil,
 					timeout_ms = nil,
 				},
-				-- LSP Server Settings
-				-- Sets the default configuration for an LSP client (or all clients if the special name "*" is used).
-				---@alias lazyvim.lsp.Config vim.lsp.Config|{mason?:boolean, enabled?:boolean, keys?:LazyKeysLspSpec[]}
-				---@type table<string, lazyvim.lsp.Config|boolean>
 				servers = {
 					-- configuration for all lsp servers
 					["*"] = {
