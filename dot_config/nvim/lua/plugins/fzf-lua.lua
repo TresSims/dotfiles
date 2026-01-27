@@ -152,6 +152,8 @@ return {
 	end,
 	init = function()
 		vim.ui.select = function(...)
+			local fzf_plugin = require("lazy.core.config").spec.plugins["fzf-lua"]
+			local opts = require("lazy.core.plugin").values(fzf_plugin, "opts", false)
 			require("lazy").load({ plugins = { "fzf-lua" } })
 			require("fzf-lua").register_ui_select(opts.ui_select or nil)
 			return vim.ui.select(...)
