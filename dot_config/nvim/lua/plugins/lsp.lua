@@ -15,13 +15,7 @@ return {
 				diagnostics = {
 					underline = true,
 					update_in_insert = false,
-					virtual_text = {
-						spacing = 4,
-						source = "if_many",
-						prefix = "●",
-						-- this will set set the prefix to a function that returns the diagnostics icon based on the severity
-						-- prefix = "icons",
-					},
+					virtual_text = false,
 					severity_sort = true,
 					signs = {
 						text = {

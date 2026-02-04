@@ -170,7 +170,7 @@ return {
 		-- find
 		{ "<leader>fb", "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
 		{ "<leader>fB", "<cmd>FzfLua buffers<cr>", desc = "Buffers (all)" },
-		{ "<leader>ff", "<cmd>lua FzfLua.files({cwd = Util.root.get()})", desc = "Find Files (Root Dir)" },
+		{ "<leader>ff", "<cmd>lua FzfLua.files({cwd = Util.root.get()})<cr>", desc = "Find Files (Root Dir)" },
 		{ "<leader>fg", "<cmd>FzfLua git_files<cr>", desc = "Find Files (git-files)" },
 		{ "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
 		-- git
