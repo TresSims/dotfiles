@@ -21,6 +21,8 @@ return {
 				"json",
 				"go",
 				"javascript",
+				"hcl",
+				"terraform",
 			},
 		},
 		config = function(_, opts)
