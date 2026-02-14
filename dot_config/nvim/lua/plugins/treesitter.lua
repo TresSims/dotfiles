@@ -7,6 +7,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		branch = "main",
 		lazy = false,
+		event = { "LazyFile", "VeryLazy" },
 		build = ":TSUpdate",
 		opts = {
 			indent = { enable = true },

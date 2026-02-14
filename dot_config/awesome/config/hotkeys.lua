@@ -157,11 +157,6 @@ clientkeys = Gears.table.join(
 	Awful.key({ Modkey }, "t", function(c)
 		c.ontop = not c.ontop
 	end, { description = "toggle keep on top", group = "client" }),
-	Awful.key({ Modkey }, "n", function(c)
-		-- The client currently has the input focus, so it cannot be
-		-- minimized, since minimized clients can't have the focus.
-		c.minimized = true
-	end, { description = "minimize", group = "client" }),
 	Awful.key({ Modkey }, "m", function(c)
 		c.maximized = not c.maximized
 		c:raise()
