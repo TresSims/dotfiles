@@ -47,9 +47,11 @@ M.tag_map = {
 
 function M.add_workspace_keymaps()
 	local workspace_keymap = {}
+	local hotkeys = false
 	for s in screen do
 		local tags = M.tag_map[next(s.outputs)]
 		if tags then
+			hotkeys = true
 			for _, tag in ipairs(tags) do
 				local target = Awful.tag.find_by_name(nil, tag.tag)
 				workspace_keymap = Gears.table.join(
@@ -59,6 +61,21 @@ function M.add_workspace_keymaps()
 						Awful.screen.focus(s)
 					end, { description = "View tag " .. tag.tag, group = "tag" }),
 					Awful.key({ Modkey, "Shift" }, tag.key, function()
+						client.focus:move_to_tag(target)
+					end)
+				)
+			end
+		end
+		if not hotkeys then
+			for i = 1, 5 do
+				local si = tostring(i)
+				local target = Awful.tag.find_by_name(nil, si)
+				workspace_keymap = Gears.table.join(
+					workspace_keymap,
+					Awful.key({ Modkey }, si, function()
+						target:view_only()
+					end, { description = "View tag " .. si, group = "tag" }),
+					Awful.key({ Modkey, "Shift" }, si, function()
 						client.focus:move_to_tag(target)
 					end)
 				)
