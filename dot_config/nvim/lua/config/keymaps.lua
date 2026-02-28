@@ -29,7 +29,7 @@ wk.add({
 
 	-- New
 	{ "<leader>n", group = "Notifications" },
-  --
+
   -- Persistance
   { "<leader>p", group = "Sessions" },
 
