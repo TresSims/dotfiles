@@ -54,5 +54,6 @@ wk.add({
 	{ "<leader><tab>", "Tab Pages" },
 	{ "<leader><tab>j", ":tabn<CR>", desc = "Go to next tabpage" },
 	{ "<leader><tab>k", ":tabp<CR>", desc = "Go to previous tabpage" },
+	{ "<leader><tab>c", ":tabc<CR>", desc = "Close current tabpage" },
 	{ "<leader><tab><tab>", ":tabnew<CR>", desc = "Create new tabpage" },
 })
