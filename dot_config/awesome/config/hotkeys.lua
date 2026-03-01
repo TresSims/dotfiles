@@ -75,10 +75,10 @@ globalkeys = Gears.table.join(
 	Awful.key({ Modkey, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
 	Awful.key({ Modkey, "Shift" }, "e", awesome.quit, { description = "quit awesome", group = "awesome" }),
 
-	Awful.key({ Modkey }, "l", function()
+	Awful.key({ Modkey, "Mod1" }, "l", function()
 		Awful.tag.incmwfact(0.05)
 	end, { description = "increase master width factor", group = "layout" }),
-	Awful.key({ Modkey }, "h", function()
+	Awful.key({ Modkey, "Mod1" }, "h", function()
 		Awful.tag.incmwfact(-0.05)
 	end, { description = "decrease master width factor", group = "layout" }),
 	Awful.key({ Modkey, "Shift" }, "h", function()
