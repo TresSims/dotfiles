@@ -14,6 +14,7 @@ return {
 			highlight = { enable = true },
 			folds = { enable = true },
 			ensure_installed = {
+				"helm",
 				"bash",
 				"lua",
 				"python",

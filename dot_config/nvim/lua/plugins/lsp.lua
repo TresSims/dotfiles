@@ -75,6 +75,7 @@ return {
             },
 					},
 					stylua = { enabled = false },
+					helm_ls = {},
 					lua_ls = {
 						settings = {
 							Lua = {
@@ -251,5 +252,9 @@ return {
 				end
 			end)
 		end,
+	},
+	{
+		"qvalentin/helm-ls.nvim",
+		ft = "helm",
 	},
 }
