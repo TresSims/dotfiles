@@ -174,9 +174,7 @@ return {
 		{ "<leader>fg", "<cmd>FzfLua git_files<cr>", desc = "Find Files (git-files)" },
 		{ "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
 		-- git
-		{ "<leader>gc", "<cmd>FzfLua git_commits<CR>", desc = "Commits" },
 		{ "<leader>gd", "<cmd>FzfLua git_diff<cr>", desc = "Git Diff (hunks)" },
-		{ "<leader>gl", "<cmd>FzfLua git_commits<CR>", desc = "Commits" },
 		{ "<leader>gs", "<cmd>FzfLua git_status<CR>", desc = "Status" },
 		{ "<leader>gS", "<cmd>FzfLua git_stash<cr>", desc = "Git Stash" },
 		-- search
