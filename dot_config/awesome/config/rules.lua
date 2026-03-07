@@ -35,7 +35,6 @@ Awful.rules.rules = {
 				"veromix",
 				"xtightvncviewer",
 				"iwgtk",
-				"stalonetray", -- TODO: Evaluate if this is needed
 			},
 
 			-- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -66,8 +65,14 @@ Awful.rules.rules = {
 			sticky = true,
 			skip_taskbar = true,
 			placement = Awful.placement.top,
+			ontop = true,
 		},
 		callback = Util.terminal.configure,
+	},
+
+	{
+		rule = { class = "discord" },
+		properties = {},
 	},
 }
 
