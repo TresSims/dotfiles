@@ -70,9 +70,25 @@ Awful.rules.rules = {
 		callback = Util.terminal.configure,
 	},
 
+	-- Default screens
 	{
 		rule = { class = "discord" },
-		properties = {},
+		properties = { tag = "chat" },
+	},
+
+	{
+		rule = { class = "Telegram" },
+		properties = { tag = "chat" },
+	},
+
+	{
+		rule = { class = "Firefox" },
+		properties = { tag = "web" },
+	},
+
+	{
+		rule = { class = "steam" },
+		properties = { tag = "steam" },
 	},
 }
 
