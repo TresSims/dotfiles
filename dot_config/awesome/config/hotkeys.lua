@@ -1,11 +1,4 @@
 -- {{{ Mouse Keys
-root.buttons(Gears.table.join(
-	Awful.button({}, 3, function()
-		Mymainmenu:toggle()
-	end),
-	Awful.button({}, 4, Awful.tag.viewnext),
-	Awful.button({}, 5, Awful.tag.viewprev)
-))
 -- }}}
 
 -- {{{ Key bindings
@@ -23,10 +16,6 @@ globalkeys = Gears.table.join(
 	Awful.key({ Modkey }, "l", Util.navigation.client_right, { description = "Client Right", group = "tag" }),
 	Awful.key({ Modkey }, "k", Util.navigation.client_up, { description = "Client up", group = "tag" }),
 	Awful.key({ Modkey }, "j", Util.navigation.client_down, { description = "Client Down", group = "tag" }),
-
-	Awful.key({ Modkey }, "w", function()
-		Mymainmenu:show()
-	end, { description = "show main menu", group = "awesome" }),
 
 	-- Client manipulation
 	Awful.key(
@@ -116,6 +105,14 @@ globalkeys = Gears.table.join(
 			history_path = Awful.util.get_cache_dir() .. "/history_eval",
 		})
 	end, { description = "lua execute prompt", group = "awesome" }),
+
+	-- Toggle views
+	Awful.key({ Modkey }, "]", function()
+		Awful.layout.inc(1)
+	end),
+	Awful.key({ Modkey }, "[", function()
+		Awful.layout.inc(-1)
+	end),
 
 	-- Run things
 	Awful.key({ Modkey }, "d", function()

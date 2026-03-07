@@ -70,9 +70,6 @@ require("config.layouts")
 require("config.menu")
 -- }}}
 
--- Keyboard map indicator and switcher
-mykeyboardlayout = Awful.widget.keyboardlayout()
-
 -- {{{ Wibar
 require("config.wibar")
 -- }}}

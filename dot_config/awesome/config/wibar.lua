@@ -1,6 +1,10 @@
 -- Create a textclock widget
 mytextclock = Wibox.widget.textclock()
 
+local background_shape = function(cr, width, height)
+	Gears.shape.parallelogram(cr, width, height, width - 12)
+end
+
 -- Create a wibox for each screen and add it
 local taglist_buttons = Gears.table.join(
 	Awful.button({}, 1, function(t)
@@ -94,10 +98,22 @@ Awful.screen.connect_for_each_screen(function(s)
 			Awful.layout.inc(-1)
 		end)
 	))
+
 	-- Create a taglist widget
 	s.mytaglist = Awful.widget.taglist({
 		screen = s,
 		filter = Awful.widget.taglist.filter.all,
+		style = {
+			shape = background_shape,
+		},
+		layout = {
+			spacing = 12,
+			spacing_widget = {
+				shape = Gears.shape.parallelogram,
+				widget = Wibox.widget.separator,
+			},
+			layout = Wibox.layout.fixed.horizontal,
+		},
 		buttons = taglist_buttons,
 	})
 
@@ -116,14 +132,12 @@ Awful.screen.connect_for_each_screen(function(s)
 		layout = Wibox.layout.align.horizontal,
 		{ -- Left widgets
 			layout = Wibox.layout.fixed.horizontal,
-			Mylauncher,
 			s.mytaglist,
 			s.mypromptbox,
 		},
 		s.mytasklist, -- Middle widget
 		{ -- Right widgets
 			layout = Wibox.layout.fixed.horizontal,
-			mykeyboardlayout,
 			Wibox.widget.systray(),
 			mytextclock,
 			s.mylayoutbox,
