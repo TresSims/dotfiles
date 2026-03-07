@@ -17,6 +17,7 @@ opt.smartindent = true
 opt.smoothscroll = true
 opt.spelllang = { "en" }
 opt.tabstop = 2
+opt.shiftwidth = 2
 opt.termguicolors = true
 opt.timeoutlen = vim.g.vscode and 1000 or 300
 opt.undolevels = 10000

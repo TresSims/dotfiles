@@ -8,4 +8,6 @@ M.workspace = require("util.workspace")
 
 M.layouts = require("util.layouts")
 
+M.audio = require("util.audio")
+
 return M

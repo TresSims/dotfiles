@@ -88,3 +88,7 @@ require("config.rules")
 -- {{{ Signals
 require("config.signals")
 -- }}}
+
+-- {{{ Startup Programs
+require("config.startup")
+-- }}}

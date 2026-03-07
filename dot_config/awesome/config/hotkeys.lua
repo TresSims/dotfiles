@@ -129,10 +129,26 @@ globalkeys = Gears.table.join(
 	-- Dropdown term
 	Awful.key({}, "F12", function()
 		Util.terminal.dropdown_toggle()
+	end),
+
+	-- files
+	Awful.key({ Modkey, "Shift" }, "f", function()
+		Awful.spawn("nemo")
+	end),
+
+	-- screenshots
+	Awful.key({ Modkey, "Shift" }, "s", function()
+		Awful.spawn("flameshot gui")
+	end),
+
+	-- picom
+	Awful.key({ Modkey }, "p", function()
+		Awful.spawn("ptoggle")
 	end)
 )
 
 globalkeys = Gears.table.join(globalkeys, Util.workspace.add_workspace_keymaps())
+globalkeys = Gears.table.join(globalkeys, Util.audio.add_audio_keymaps())
 
 clientkeys = Gears.table.join(
 	Awful.key({ Modkey }, "f", function(c)
