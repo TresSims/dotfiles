@@ -126,6 +126,23 @@ globalkeys = Gears.table.join(
 		Awful.spawn.with_shell("~/.config/rofi/bin/launcher_slate")
 	end),
 
+	-- Audio
+	Awful.key({}, "XF86AudioRaiseVolume", function()
+		Awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%")
+	end),
+
+	Awful.key({}, "XF86AudioLowerVolume", function()
+		Awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -10%")
+	end),
+
+	Awful.key({}, "XF86AudioMute", function()
+		Awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")
+	end),
+
+	Awful.key({}, "XF86AudioMicMute", function()
+		Awful.spawn("pactl set-source-mute @DEFAULT_SOURCE@ toggle")
+	end),
+
 	-- Dropdown term
 	Awful.key({}, "F12", function()
 		Util.terminal.dropdown_toggle()
@@ -148,7 +165,6 @@ globalkeys = Gears.table.join(
 )
 
 globalkeys = Gears.table.join(globalkeys, Util.workspace.add_workspace_keymaps())
-globalkeys = Gears.table.join(globalkeys, Util.audio.add_audio_keymaps())
 
 clientkeys = Gears.table.join(
 	Awful.key({ Modkey }, "f", function(c)
