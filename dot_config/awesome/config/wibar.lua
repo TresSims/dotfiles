@@ -2,7 +2,7 @@
 mytextclock = Wibox.widget.textclock()
 
 local background_shape = function(cr, width, height)
-	Gears.shape.parallelogram(cr, width, height, width - 12)
+	Gears.shape.parallelogram(cr, width + 5, height, width - 12)
 end
 
 -- Create a wibox for each screen and add it
@@ -49,11 +49,14 @@ local tasklist_buttons = Gears.table.join(
 )
 
 local function set_wallpaper()
-	-- Wallpaper
+	-- Fallback Wallpaper
 	if Beautiful.wallpaper then
 		local wallpaper = Beautiful.wallpaper
 		Gears.wallpaper.maximized(wallpaper, nil, true)
 	end
+
+	-- Live wallpaper
+	Awful.spawn.with_shell("wall_animaged_bg.sh")
 end
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
