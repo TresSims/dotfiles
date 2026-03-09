@@ -1,10 +1,6 @@
 -- Create a textclock widget
 mytextclock = Wibox.widget.textclock()
 
-local background_shape = function(cr, width, height)
-	Gears.shape.parallelogram(cr, width + 5, height, width - 12)
-end
-
 -- Create a wibox for each screen and add it
 local taglist_buttons = Gears.table.join(
 	Awful.button({}, 1, function(t)
@@ -82,8 +78,6 @@ Awful.screen.connect_for_each_screen(function(s)
 		Awful.tag({ "1", "2", "3", "4", "5" }, s, Awful.layout.layouts[1])
 	end
 
-	-- Create a promptbox for each screen
-	s.mypromptbox = Awful.widget.prompt()
 	-- Create an imagebox widget which will contain an icon indicating which layout we're using.
 	-- We need one layoutbox per screen.
 	s.mylayoutbox = Awful.widget.layoutbox(s)
@@ -106,18 +100,40 @@ Awful.screen.connect_for_each_screen(function(s)
 	s.mytaglist = Awful.widget.taglist({
 		screen = s,
 		filter = Awful.widget.taglist.filter.all,
-		style = {
-			shape = background_shape,
-		},
-		layout = {
-			spacing = 12,
-			spacing_widget = {
-				shape = Gears.shape.parallelogram,
-				widget = Wibox.widget.separator,
-			},
-			layout = Wibox.layout.fixed.horizontal,
-		},
 		buttons = taglist_buttons,
+		widget_template = {
+			{
+				id = "text_role",
+				widget = Wibox.widget.textbox,
+			},
+			left = 4,
+			right = 4,
+			widget = Wibox.container.margin,
+		},
+	})
+
+	-- create a hwmon widget
+	s.hwmon = Wibox.widget({
+		{
+			{
+				{
+					Util.shapes.hwmon.cpuWidget,
+					Util.shapes.hwmon.memWidget,
+					Util.shapes.hwmon.gpuWidget,
+					layout = Wibox.layout.align.horizontal,
+				},
+				left = 18,
+				right = 18,
+				widget = Wibox.container.margin,
+			},
+			bg = Beautiful.background,
+			fg = Beautiful.teal,
+			shape = Util.shapes.parallelogram_left,
+			widget = Wibox.container.background,
+			visible = s.primary,
+		},
+		left = -Util.shapes.offset,
+		widget = Wibox.container.margin,
 	})
 
 	-- Create a tasklist widget
@@ -132,18 +148,67 @@ Awful.screen.connect_for_each_screen(function(s)
 
 	-- Add widgets to the wibox
 	s.mywibox:setup({
-		layout = Wibox.layout.align.horizontal,
-		{ -- Left widgets
-			layout = Wibox.layout.fixed.horizontal,
-			s.mytaglist,
-			s.mypromptbox,
+		{
+			layout = Wibox.layout.align.horizontal,
+			{ -- Left widgets
+				{
+					{
+						{
+							s.mytaglist,
+							layout = Wibox.layout.fixed.horizontal,
+						},
+						left = 18,
+						right = 18,
+						widget = Wibox.container.margin,
+					},
+					bg = Beautiful.focus,
+					shape = Util.shapes.angle_rect_wibar,
+					widget = Wibox.container.background,
+				},
+				s.hwmon,
+				bg = Beautiful.background,
+				layout = Wibox.layout.fixed.horizontal,
+			},
+			s.mytasklist, -- Middle widget
+			{ -- Right widgets
+				{
+					{
+						{
+							{
+								Wibox.widget.systray(),
+								layout = Wibox.layout.fixed.horizontal,
+							},
+							left = Util.shapes.offset + 5,
+							right = Util.shapes.offset,
+							widget = Wibox.container.margin,
+						},
+						bg = Beautiful.background,
+						widget = Wibox.container.background,
+						shape = Util.shapes.parallelogram_right,
+					},
+					right = -Util.shapes.offset,
+					widget = Wibox.container.margin,
+				},
+				{
+					{
+						{
+							layout = Wibox.layout.fixed.horizontal,
+							{
+								widget = Wibox.widget.textbox,
+								markup = "   ",
+							},
+							mytextclock,
+						},
+						widget = Wibox.container.margin,
+					},
+					bg = Beautiful.focus,
+					shape = Util.shapes.angle_rect_wibar_inverse,
+					widget = Wibox.container.background,
+				},
+				layout = Wibox.layout.fixed.horizontal,
+			},
 		},
-		s.mytasklist, -- Middle widget
-		{ -- Right widgets
-			layout = Wibox.layout.fixed.horizontal,
-			Wibox.widget.systray(),
-			mytextclock,
-			s.mylayoutbox,
-		},
+		widget = Wibox.container.margin,
+		margin = 0,
 	})
 end)

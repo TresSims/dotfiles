@@ -1,8 +1,5 @@
 ----------------------------------
 --  "Tokyonight" awesome theme  --
---          By Tres             --
---       Based on "Zenburn"     --
---      By Adrian C. (anrxc)    --
 ----------------------------------
 
 local themes_path = Gears.filesystem.get_configuration_dir()
@@ -38,11 +35,14 @@ theme.gutter = "#1a1b26"
 -- {{{ Colors
 theme.fg_normal = theme.gray_3
 theme.fg_focus = theme.purple
+theme.taglist_fg_focus = theme.orange
+theme.tasklist_bg_normal = theme.gutter
+theme.tasklist_bg_focus = theme.gutter
 theme.fg_urgent = theme.red
 theme.bg_normal = theme.gutter
 theme.bg_focus = theme.background
-theme.bg_urgent = theme.red
-theme.bg_systray = theme.bg_normal
+-- theme.bg_urgent = theme.red
+theme.bg_systray = theme.background
 -- }}}
 
 -- {{{ Borders

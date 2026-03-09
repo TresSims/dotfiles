@@ -4,43 +4,43 @@ M.tag_map = {
 	["HDMI-0"] = {
 		{
 			key = "1",
-			tag = "web",
+			tag = "  ",
 		},
 		{
 			key = "4",
-			tag = "?",
+			tag = "  ",
 		},
 		{
 			key = "7",
-			tag = "??",
+			tag = "  ",
 		},
 	},
 	["DP-0"] = {
 		{
 			key = "2",
-			tag = "primary",
+			tag = "  ",
 		},
 		{
 			key = "5",
-			tag = "secondary",
+			tag = " 󰈹 ",
 		},
 		{
 			key = "8",
-			tag = "tertiary",
+			tag = " 󰂫 ",
 		},
 	},
 	["DP-2"] = {
 		{
 			key = "3",
-			tag = "chat",
+			tag = " 󰭹 ",
 		},
 		{
 			key = "6",
-			tag = "web-overflow",
+			tag = "  ",
 		},
 		{
 			key = "9",
-			tag = "steam",
+			tag = "",
 		},
 	},
 }

@@ -72,6 +72,7 @@ require("config.menu")
 
 -- {{{ Wibar
 require("config.wibar")
+-- require("config.bar")
 -- }}}
 
 -- {{{ Input
