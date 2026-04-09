@@ -10,7 +10,10 @@ return {
 		event = { "LazyFile", "VeryLazy" },
 		build = ":TSUpdate",
 		opts = {
-			indent = { enable = true },
+			indent = {
+				enable = true,
+				disable = { "yaml" },
+			},
 			highlight = { enable = true },
 			folds = { enable = true },
 			ensure_installed = {
