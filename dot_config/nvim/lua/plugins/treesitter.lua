@@ -12,7 +12,7 @@ return {
 		opts = {
 			indent = {
 				enable = true,
-				disable = { "yaml" },
+				disable = { "yaml", "gdscript" },
 			},
 			highlight = { enable = true },
 			folds = { enable = true },
@@ -28,6 +28,7 @@ return {
 				"javascript",
 				"hcl",
 				"terraform",
+				"gdscript",
 			},
 		},
 		config = function(_, opts)
