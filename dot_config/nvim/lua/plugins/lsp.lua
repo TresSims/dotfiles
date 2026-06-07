@@ -74,6 +74,7 @@ return {
                 desc = "Prev Reference", enabled = function() return Snacks.words.is_enabled() end },
             },
 					},
+					gdscript = { enabled = true },
 					stylua = { enabled = false },
 					helm_ls = {},
 					lua_ls = {

@@ -7,3 +7,5 @@ require("config.keymaps")
 require("config.autocmds")
 
 require("config.settings")
+
+require("config.godot")
