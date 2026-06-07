@@ -7,6 +7,7 @@ function M.generate_layouts()
 		Awful.layout.suit.tile.bottom,
 		Awful.layout.suit.tile.top,
 		Awful.layout.suit.spiral,
+		Awful.layout.suit.max,
 	}
 end
 
