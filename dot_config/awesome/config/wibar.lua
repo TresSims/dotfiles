@@ -52,7 +52,7 @@ local function set_wallpaper()
 	end
 
 	-- Live wallpaper
-	Awful.spawn.with_shell("wall_animaged_bg.sh")
+	-- Awful.spawn.with_shell("wall_animaged_bg.sh") -- Beautiful, but tragically slow
 end
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
