@@ -11,6 +11,9 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "isort", "black" },
+			terraform = { lsp_format = "prefer" },
+			go = { lsp_format = "prefer" },
+			yaml = { lsp_format = "prefer" },
 		},
 	},
 }
