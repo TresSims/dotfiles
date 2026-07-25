@@ -70,5 +70,19 @@ Awful.rules.rules = {
 		callback = Util.terminal.configure,
 	},
 
+	-- Flameshot's fullscreen capture overlay gets shrunk to 1x1 by the
+	-- default no_overlap/no_offscreen placement above, so it never
+	-- becomes visible. Skip placement and force it fullscreen instead.
+	{
+		rule = { class = "flameshot" },
+		properties = {
+			floating = true,
+			ontop = true,
+			skip_taskbar = true,
+			fullscreen = true,
+			placement = false,
+		},
+	},
+
 	-- Default screens
 }
