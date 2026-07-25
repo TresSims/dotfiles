@@ -2,7 +2,7 @@ return {
 	"NeogitOrg/neogit",
 	lazy = true,
 	dependencies = {
-		"esmuellert/codediff.nvim", -- optional
+		"sindrets/diffview.nvim", -- optional
 
 		"ibhagwan/fzf-lua", -- optional
 		"nvim-mini/mini.pick", -- optional
