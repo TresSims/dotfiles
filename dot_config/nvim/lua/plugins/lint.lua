@@ -5,6 +5,7 @@ return {
 		events = { "BufWritePost", "BufReadPost", "InsertLeave" },
 		linters_by_ft = {
 			fish = { "fish" },
+			yaml = { "yamllint" },
 		},
 		linters = {},
 	},
