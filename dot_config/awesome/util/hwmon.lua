@@ -55,8 +55,8 @@ function M.pollHardwareState()
 	end)
 
 	-- GPU Usage
-	Awful.spawn.easy_async_with_shell("gpustat | grep -o '...%'", function(out, err)
-		if err then
+	Awful.spawn.easy_async_with_shell("gpustat | grep -o '...%'", function(out, _, _, exitcode)
+		if exitcode ~= 0 then
 			M.segments.gpu = ""
 		else
 			M.segments.gpu = M.gpuPrefix .. trim(out)
@@ -66,19 +66,23 @@ function M.pollHardwareState()
 	end)
 
 	-- Battery Percent
-	Awful.spawn.easy_async_with_shell("cat /sys/class/power_supply/BAT1/uevent", function(out)
-		local batStatus = {}
+	Awful.spawn.easy_async_with_shell("cat /sys/class/power_supply/BAT1/uevent", function(out, _, _, exitcode)
+		if exitcode ~= 0 then
+			M.segments.battery = ""
+		else
+			local batStatus = {}
 
-		for line in out:gmatch("[^\n]+") do
-			local k, v = line:match("(%w+)=(%w+)")
-			if k then
-				batStatus[k] = v
+			for line in out:gmatch("[^\n]+") do
+				local k, v = line:match("(%w+)=(%w+)")
+				if k then
+					batStatus[k] = v
+				end
 			end
-		end
 
-		local status = batStatus[BAT_STATUS_KEY] or "Discharging"
-		local capacity = batStatus[BAT_VALUE_KEY] or "0"
-		M.segments.battery = M.batPrefix .. batteryIcon(status, capacity) .. " " .. capacity .. "%"
+			local status = batStatus[BAT_STATUS_KEY] or "Discharging"
+			local capacity = batStatus[BAT_VALUE_KEY] or "0"
+			M.segments.battery = M.batPrefix .. batteryIcon(status, capacity) .. " " .. capacity .. "%"
+		end
 		renderMarkup()
 	end)
 end
