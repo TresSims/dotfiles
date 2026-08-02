@@ -11,7 +11,7 @@ theme.wallpaper = themes_path .. "theme/background.png"
 -- }}}
 
 -- {{{ Styles
-theme.font = "FiraCode Nerd Font 8"
+theme.font = "FiraCode Nerd Font 12"
 
 theme.red = "#f7768e"
 theme.orange = "#ff9e64"

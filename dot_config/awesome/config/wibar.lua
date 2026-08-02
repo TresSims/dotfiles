@@ -117,9 +117,7 @@ Awful.screen.connect_for_each_screen(function(s)
 		{
 			{
 				{
-					Util.shapes.hwmon.cpuWidget,
-					Util.shapes.hwmon.memWidget,
-					Util.shapes.hwmon.gpuWidget,
+					Util.shapes.hwmon.hwWidget,
 					layout = Wibox.layout.align.horizontal,
 				},
 				left = 18,

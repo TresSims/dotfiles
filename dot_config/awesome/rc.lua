@@ -18,8 +18,6 @@ Hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
-Util = require("util.root")
-
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -62,6 +60,8 @@ Editor_cmd = Terminal .. " -e " .. Editor
 
 Modkey = "Mod4"
 -- }}}
+
+Util = require("util.root")
 
 require("config.layouts")
 
