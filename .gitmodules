@@ -1,0 +1,3 @@
+[submodule "dot_config/wezterm/modal.wezterm"]
+	path = dot_config/wezterm/modal.wezterm
+	url = https://github.com/MLFlexer/modal.wezterm
