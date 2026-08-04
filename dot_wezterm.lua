@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 
-local tab_style = require("tab_style")
+require("tab_style")
 local modal = wezterm.plugin.require("https://github.com/MLFlexer/modal.wezterm")
 
 local config = {
