@@ -1,0 +1,69 @@
+return {
+	{
+		"nvim-treesitter/nvim-treesitter",
+		opts = {
+			ensure_installed = {
+				"go",
+				"gomod",
+				"gowork",
+				"gosum",
+			},
+		},
+	},
+	{
+		"neovim/nvim-lspconfig",
+		opts = {
+			servers = {
+				gopls = {},
+			},
+		},
+	},
+	{
+		"mason-org/mason.nvim",
+		opts = {
+			ensure_installed = {
+				"goimports",
+				"golangci-lint",
+				"delve",
+			},
+		},
+	},
+	{
+		"mfussenegger/nvim-lint",
+		opts = {
+			linters_by_ft = {
+				go = "golangci-lint",
+			},
+		},
+	},
+	{
+		"stevear/conform.nvim",
+		opts = {
+			formatters_by_ft = {
+				go = {
+					lsp_format = "prefer",
+					"goimports",
+				},
+			},
+		},
+	},
+	{
+		"mfussenegger/nvim-dap",
+		dependencies = {
+			"leoluz/nvim-dap-go",
+		},
+	},
+	{
+		"nvim-neotest/neotest",
+		dependencies = {
+			"fredrikaverpil/neotest-golang",
+		},
+		opts = {
+			adapters = {
+				["neotest-golang"] = {
+					dap_go_enabled = true,
+				},
+			},
+		},
+	},
+}

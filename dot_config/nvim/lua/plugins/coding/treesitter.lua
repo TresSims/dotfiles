@@ -1,9 +1,5 @@
 return {
 	{
-		"windwp/nvim-ts-autotag",
-		opts = {},
-	},
-	{
 		"nvim-treesitter/nvim-treesitter",
 		branch = "main",
 		lazy = false,
@@ -12,24 +8,9 @@ return {
 		opts = {
 			indent = {
 				enable = false,
-				disable = { "yaml", "gdscript", "terraform", "hcl" },
 			},
 			highlight = { enable = true },
 			folds = { enable = true },
-			ensure_installed = {
-				"helm",
-				"bash",
-				"lua",
-				"python",
-				"vim",
-				"yaml",
-				"json",
-				"go",
-				"javascript",
-				"hcl",
-				"terraform",
-				"gdscript",
-			},
 		},
 		config = function(_, opts)
 			local TS = require("nvim-treesitter")
@@ -148,5 +129,14 @@ return {
 			})
 			vim.tbl_map(attach, vim.api.nvim_list_bufs())
 		end,
+	},
+	{
+		"folke/ts-comments.nvim",
+		event = "VeryLazy",
+		opts = {},
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		opts = {},
 	},
 }

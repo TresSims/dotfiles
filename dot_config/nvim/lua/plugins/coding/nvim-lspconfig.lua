@@ -74,9 +74,7 @@ return {
                 desc = "Prev Reference", enabled = function() return Snacks.words.is_enabled() end },
             },
 					},
-					gdscript = { enabled = true },
 					stylua = { enabled = false },
-					helm_ls = {},
 					lua_ls = {
 						settings = {
 							Lua = {
@@ -104,18 +102,7 @@ return {
 						},
 					},
 				},
-				-- you can do any additional lsp server setup here
-				-- return true if you don't want this server to be setup with lspconfig
-				---@type table<string, fun(server:string, opts: vim.lsp.Config):boolean?>
-				setup = {
-					-- example to setup with typescript.nvim
-					-- tsserver = function(_, opts)
-					--   require("typescript").setup({ server = opts })
-					--   return true
-					-- end,
-					-- Specify * to use this function as a fallback for any server
-					-- ["*"] = function(server, opts) end,
-				},
+				setup = {},
 			}
 			return ret
 		end,
@@ -216,46 +203,5 @@ return {
 				})
 			end
 		end),
-	},
-	-- cmdline tools and lsp servers
-	{
-		"mason-org/mason.nvim",
-		cmd = "Mason",
-		keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
-		build = ":MasonUpdate",
-		opts_extend = { "ensure_installed" },
-		opts = {
-			ensure_installed = {
-				"stylua",
-				"shfmt",
-			},
-		},
-		---@param opts MasonSettings | {ensure_installed: string[]}
-		config = function(_, opts)
-			require("mason").setup(opts)
-			local mr = require("mason-registry")
-			mr:on("package:install:success", function()
-				vim.defer_fn(function()
-					-- trigger FileType event to possibly load this newly installed LSP server
-					require("lazy.core.handler.event").trigger({
-						event = "FileType",
-						buf = vim.api.nvim_get_current_buf(),
-					})
-				end, 100)
-			end)
-
-			mr.refresh(function()
-				for _, tool in ipairs(opts.ensure_installed) do
-					local p = mr.get_package(tool)
-					if not p:is_installed() then
-						p:install()
-					end
-				end
-			end)
-		end,
-	},
-	{
-		"qvalentin/helm-ls.nvim",
-		ft = "helm",
 	},
 }

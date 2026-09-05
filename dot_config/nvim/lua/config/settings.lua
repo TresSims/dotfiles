@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 opt.undofile = true
 opt.autowrite = true
 opt.clipboard = vim.env.SSH_CONNECTION and "" or "unnamedplus"

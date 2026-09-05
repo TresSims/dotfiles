@@ -20,17 +20,16 @@ local Event = require("lazy.core.handler.event")
 Event.mappings.LazyFile = { id = "LazyFile", event = { "BufReadPost", "BufNewFile", "BufWritePre" } }
 Event.mappings["User LazyFile"] = Event.mappings.LazyFile
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
 		-- import your plugins
-		{ import = "plugins" },
+		{ import = "plugins.core" }, -- Core functionality plugins
+		{ import = "plugins.ui" }, -- Plugins that add panels or manipulate the ui
+		{ import = "plugins.langs" }, -- language specific plugin configuration
+		{ import = "plugins.coding" }, -- Coding utility plugins
+		{ import = "plugins.git" }, -- Git related plugins
+		{ import = "plugins.misc" }, -- Misc Plugins
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.

@@ -1,11 +1,9 @@
 _G.Util = require("util")
 
-require("config.lazy")
-
-require("config.keymaps")
+require("config.settings")
 
 require("config.autocmds")
 
-require("config.settings")
+require("config.lazy")
 
-require("config.godot")
+require("config.keymaps")
