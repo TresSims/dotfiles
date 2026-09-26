@@ -25,6 +25,7 @@ return {
 				"goimports",
 				"golangci-lint",
 				"delve",
+				"gopls",
 			},
 		},
 	},
@@ -32,7 +33,7 @@ return {
 		"mfussenegger/nvim-lint",
 		opts = {
 			linters_by_ft = {
-				go = "golangci-lint",
+				go = { "golangcilint" },
 			},
 		},
 	},
@@ -56,12 +57,12 @@ return {
 	{
 		"nvim-neotest/neotest",
 		dependencies = {
-			"fredrikaverpil/neotest-golang",
+			"nvim-neotest/neotest-go",
 		},
 		opts = {
 			adapters = {
-				["neotest-golang"] = {
-					dap_go_enabled = true,
+				["neotest-go"] = {
+					recursive_run = true,
 				},
 			},
 		},
